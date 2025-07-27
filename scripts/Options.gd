@@ -38,4 +38,4 @@ func _on_save_btn_pressed() -> void:
 
 
 func _on_cancel_btn_pressed() -> void:
-	SceneSwitcher.switch_scene("res://scenes/MainMenu.tscn")
+	SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu

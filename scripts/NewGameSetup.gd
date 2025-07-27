@@ -8,10 +8,10 @@ var player2_label: TextureRect
 var player1_ready: bool = false
 var player2_ready: bool = false
 
-var player1_selected: String = ""
-var player2_selected: String = ""
-
 func _ready() -> void:
+	Utility.player1_selected = ""
+	Utility.player2_selected = ""
+	
 	var connected_pads = Input.get_connected_joypads()
 	
 	player1 = %Player1Container
@@ -44,8 +44,8 @@ func _ready() -> void:
 		_add_controller_input("p2", 1)
 
 func _process(delta: float) -> void:
-	if player1_ready and player2_ready and ((player1_selected == "Operator" and player2_selected == "Driver") or (player1_selected == "Driver" and player2_selected == "Operator")):
-		SceneSwitcher.switch_scene("uid://y2yrudm57l61") # Load into the city
+	if player1_ready and player2_ready and ((Utility.player1_selected == "Operator" and Utility.player2_selected == "Driver") or (Utility.player1_selected == "Driver" and Utility.player2_selected == "Operator")):
+		SceneSwitcher.switch_scene("uid://b5t5uspulig2g") # Load into the Garage
 	
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("left_p1"):
@@ -55,7 +55,7 @@ func _unhandled_input(_event):
 			$%DriverVBoxContainer.add_child(player1)
 			player1.show()
 			player1.reset_size()
-			player1_selected = "Driver"
+			Utility.player1_selected = "Driver"
 	if Input.is_action_just_pressed("right_p1"):
 		var old_parent = player1.get_parent()
 		if old_parent:
@@ -63,7 +63,7 @@ func _unhandled_input(_event):
 			$%OperatorVBoxContainer.add_child(player1)
 			player1.show()
 			player1.reset_size()
-			player1_selected = "Operator"
+			Utility.player1_selected = "Operator"
 	if Input.is_action_just_pressed("left_p2"):
 		var old_parent = player2.get_parent()
 		if old_parent:
@@ -71,7 +71,7 @@ func _unhandled_input(_event):
 			$%DriverVBoxContainer.add_child(player2)
 			player2.show()
 			player2.reset_size()
-			player2_selected = "Driver"
+			Utility.player2_selected = "Driver"
 	if Input.is_action_just_pressed("right_p2"):
 		var old_parent = player2.get_parent()
 		if old_parent:
@@ -79,7 +79,7 @@ func _unhandled_input(_event):
 			$%OperatorVBoxContainer.add_child(player2)
 			player2.show()
 			player2.reset_size()
-			player2_selected = "Operator"
+			Utility.player2_selected = "Operator"
 			
 	if Input.is_action_just_pressed("action_p1"):
 		player1_ready = true
