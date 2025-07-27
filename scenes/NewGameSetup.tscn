@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://di0q3ok3ocsaj"]
+
+[ext_resource type="Script" uid="uid://t1tvgy234dga" path="res://scripts/NewGameSetup.gd" id="1_6sv6c"]
+
+[node name="NewGameSetup" type="Node2D"]
+script = ExtResource("1_6sv6c")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DriverVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DriverLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/DriverVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Driver"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControllerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Select Controller"
+horizontal_alignment = 1
+
+[node name="Player1Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Player1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+stretch_mode = 4
+
+[node name="Player1Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="Player2Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Player2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+stretch_mode = 4
+
+[node name="Player2Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="OperatorVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OperatorLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/OperatorVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Operator"
+horizontal_alignment = 1

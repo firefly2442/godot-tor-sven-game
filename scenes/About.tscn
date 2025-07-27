@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://bksrdmi7ug4ve"]
+
+[ext_resource type="Script" uid="uid://bedblcg7hbq6l" path="res://scripts/About.gd" id="1_t6kcj"]
+[ext_resource type="Texture2D" uid="uid://docckilkns32j" path="res://images/ui/godot.svg" id="2_gpaav"]
+
+[node name="About" type="Node2D"]
+script = ExtResource("1_t6kcj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="SpacerLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Powered by the Godot Game Engine"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_gpaav")
+stretch_mode = 4
+
+[node name="Label3" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Programming:
+
+Patrick Carlson
+
+Game Design:
+
+Patrick Carlson
+
+QA Testers:
+
+Lina Huang
+
+Graphics:
+
+Kenney
+https://kenney.nl
+
+Thanks To:
+
+Tor, Sven, and the entire family!
+Kenney for art assets
+https://kenney.nl
+The Godot community"
+horizontal_alignment = 1
