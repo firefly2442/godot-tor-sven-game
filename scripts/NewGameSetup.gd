@@ -25,23 +25,17 @@ func _ready() -> void:
 		$%Player2.texture = load("res://images/ui/keyboard.png")
 		$%Player2Label.text = "Player 2 - Keyboard"
 	elif connected_pads.size() == 1:
-		$%Player1.texture = load("res://images/ui/keyboard.png")
-		$%Player1Label.text = "Player 1 - Keyboard"
-		$%Player2.texture = load("res://images/ui/controller.png")
-		$%Player2Label.text = "Player 2 - Controller"
+		$%Player1.texture = load("res://images/ui/controller.png")
+		$%Player1Label.text = "Player 1 - Controller"
+		$%Player2.texture = load("res://images/ui/keyboard.png")
+		$%Player2Label.text = "Player 2 - Keyboard"
 	elif connected_pads.size() >= 2:
 		$%Player1.texture = load("res://images/ui/controller.png")
 		$%Player1Label.text = "Player 1 - Controller"
 		$%Player2.texture = load("res://images/ui/controller.png")
 		$%Player2Label.text = "Player 2 - Controller"
 	
-	# Setup input for Player 1 (Controller 0)
-	if connected_pads.has(0):
-		_add_controller_input("p1", 0)
-	
-	# Setup input for Player 2 (Controller 1)
-	if connected_pads.has(1):
-		_add_controller_input("p2", 1)
+
 
 func _process(delta: float) -> void:
 	if player1_ready and player2_ready and ((Utility.player1_selected == "Operator" and Utility.player2_selected == "Driver") or (Utility.player1_selected == "Driver" and Utility.player2_selected == "Operator")):
@@ -93,57 +87,3 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("back_p2"):
 		player2_ready = false
 		player2_label.modulate = Color(1,0,0,1) # red
-
-
-func _add_controller_input(player_prefix: String, device_id: int) -> void:
-	var actions = {
-		"left": {
-			"type": "axis",
-			"axis": JOY_AXIS_LEFT_X,
-			"axis_value": -1.0
-		},
-		"right": {
-			"type": "axis",
-			"axis": JOY_AXIS_LEFT_X,
-			"axis_value": 1.0
-		},
-		"up": {
-			"type": "axis",
-			"axis": JOY_AXIS_LEFT_Y,
-			"axis_value": -1.0
-		},
-		"down": {
-			"type": "axis",
-			"axis": JOY_AXIS_LEFT_Y,
-			"axis_value": 1.0
-		},
-		"action": {
-			"type": "button",
-			"button_index": JOY_BUTTON_A  # A button on Xbox controller
-		},
-		"back": {
-			"type": "button",
-			"button_index": JOY_BUTTON_B  # B button on Xbox controller
-		}
-	}
-
-	for action_name in actions.keys():
-		var input_action = "%s_%s" % [action_name, player_prefix]
-
-		# Clear old mappings to avoid duplicates
-		#InputMap.action_erase_events(input_action)
-
-		var config = actions[action_name]
-		
-		if config.type == "button":
-			var event = InputEventJoypadButton.new()
-			event.device = device_id
-			event.button_index = config.button_index
-			InputMap.action_add_event(input_action, event)
-
-		elif config.type == "axis":
-			var event = InputEventJoypadMotion.new()
-			event.device = device_id
-			event.axis = config.axis
-			event.axis_value = config.axis_value
-			InputMap.action_add_event(input_action, event)

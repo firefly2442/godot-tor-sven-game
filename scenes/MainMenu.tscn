@@ -15,28 +15,33 @@ theme_override_constants/separation = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "The Tor and Sven Game!"
 
-[node name="NewGame_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="MenuContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NewGameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "New Game"
 
-[node name="Options_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="OptionsLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Options"
 
-[node name="About_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="AboutLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "About"
+text = "About / Credits"
 
-[node name="Quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="QuitLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit"
@@ -64,8 +69,3 @@ current = true
 
 [node name="GLBModel" type="Node3D" parent="MarginContainer/HBoxContainer/SubViewportContainer/SubViewport/RotateModel"]
 unique_name_in_owner = true
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/NewGame_btn" to="." method="_on_new_game_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options_btn" to="." method="_on_options_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/About_btn" to="." method="_on_about_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_btn" to="." method="_on_quit_btn_pressed"]

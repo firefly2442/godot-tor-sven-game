@@ -1,8 +1,9 @@
 extends Node2D
 
 @export var rotation_speed: float = 30.0  # Degrees per second
-
-var model_list: Array = ["ambulance", "garbage-truck", "police", "tractor", "truck", "firetruck"]
+@onready var menuitems: Array[Node] = $%MenuContainer.get_children()
+var selected_index: int = 0
+var model_list: Array[String] = ["ambulance", "garbage-truck", "police", "tractor", "truck", "firetruck"]
 
 func _ready():
 	randomize()  # Ensures different results each run
@@ -12,20 +13,37 @@ func _ready():
 	if glb_resource is PackedScene:
 		var glb_instance = glb_resource.instantiate()
 		%GLBModel.add_child(glb_instance)
-
-func _on_quit_btn_pressed() -> void:
-	# quit the game
-	get_tree().quit()
-
-func _on_new_game_btn_pressed() -> void:
-	SceneSwitcher.switch_scene("uid://di0q3ok3ocsaj") # New Game
-
-func _on_options_btn_pressed() -> void:
-	SceneSwitcher.switch_scene("uid://b35ghe84mnrs") # Options
-
-func _on_about_btn_pressed() -> void:
-	SceneSwitcher.switch_scene("uid://bksrdmi7ug4ve") # About
+	
+	update_selection()
 
 func _process(delta) -> void:
 	%GLBModel.rotate_y(deg_to_rad(rotation_speed * delta))
-	
+
+func _unhandled_input(event):
+	if event.is_action_pressed("down_p1") or event.is_action_pressed("down_p2"):
+		selected_index = (selected_index + 1) % menuitems.size()
+		update_selection()
+	elif event.is_action_pressed("up_p1") or event.is_action_pressed("up_p2"):
+		selected_index = (selected_index - 1 + menuitems.size()) % menuitems.size()
+		update_selection()
+	elif event.is_action_pressed("action_p1") or event.is_action_pressed("action_p2"):
+		_on_item_selected(selected_index)
+
+func update_selection():
+	for i in range(menuitems.size()):
+		var item: Node = menuitems[i]
+		if i == selected_index:
+			item.modulate = Color.YELLOW
+		else:
+			item.modulate = Color.WHITE
+
+func _on_item_selected(index):
+	if index == 0:
+			SceneSwitcher.switch_scene("uid://di0q3ok3ocsaj") # New Game
+	elif index == 1:
+		SceneSwitcher.switch_scene("uid://b35ghe84mnrs") # Options
+	elif index == 2:
+		SceneSwitcher.switch_scene("uid://bksrdmi7ug4ve") # About
+	elif index == 3:
+		# quit the game
+		get_tree().quit()
