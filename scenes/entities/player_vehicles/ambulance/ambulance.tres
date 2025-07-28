@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=2 format=3 uid="uid://dhgr0cdhk6bwe"]
+
+[ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_me21k"]
+
+[resource]
+script = ExtResource("1_me21k")
+speed = 20.0
+vehicletype = 0
+metadata/_custom_type_script = "uid://cfalb38rhymnv"
