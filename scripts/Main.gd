@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready() -> void:
-	var connected_pads = Input.get_connected_joypads()
+	var connected_pads: Array[int] = Input.get_connected_joypads()
 
 	# Setup input for Player 1 (Controller 0)
 	if connected_pads.has(0):
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _add_controller_input(player_prefix: String, device_id: int) -> void:
-	var actions = {
+	var actions: Dictionary = {
 		"left": {
 			"type": "axis",
 			"axis": JOY_AXIS_LEFT_X,
@@ -46,22 +46,22 @@ func _add_controller_input(player_prefix: String, device_id: int) -> void:
 		}
 	}
 
-	for action_name in actions.keys():
-		var input_action = "%s_%s" % [action_name, player_prefix]
+	for action_name: Array in actions.keys():
+		var input_action: String = "%s_%s" % [action_name, player_prefix]
 
 		# Clear old mappings to avoid duplicates
 		#InputMap.action_erase_events(input_action)
 
-		var config = actions[action_name]
+		var config: Variant = actions[action_name]
 		
 		if config.type == "button":
-			var event = InputEventJoypadButton.new()
+			var event: Object = InputEventJoypadButton.new()
 			event.device = device_id
 			event.button_index = config.button_index
 			InputMap.action_add_event(input_action, event)
 
 		elif config.type == "axis":
-			var event = InputEventJoypadMotion.new()
+			var event: Object = InputEventJoypadMotion.new()
 			event.device = device_id
 			event.axis = config.axis
 			event.axis_value = config.axis_value
