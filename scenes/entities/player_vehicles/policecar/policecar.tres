@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=2 format=3 uid="uid://ccnrt1tmmm6dj"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=3 format=3 uid="uid://ccnrt1tmmm6dj"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_d1erk"]
+[ext_resource type="Texture2D" uid="uid://du64q8qi84wu0" path="res://scenes/entities/player_vehicles/policecar/policecar.png" id="2_85aft"]
 
 [resource]
 script = ExtResource("1_d1erk")
 speed = 25.0
 vehicletype = 2
+texture = ExtResource("2_85aft")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

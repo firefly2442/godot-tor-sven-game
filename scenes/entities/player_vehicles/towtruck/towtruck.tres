@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=2 format=3 uid="uid://beu2y01pvh78r"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=3 format=3 uid="uid://beu2y01pvh78r"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_3q68h"]
+[ext_resource type="Texture2D" uid="uid://bi4jriyfvk3tf" path="res://scenes/entities/player_vehicles/towtruck/towtruck.png" id="2_p5uex"]
 
 [resource]
 script = ExtResource("1_3q68h")
 speed = 12.0
 vehicletype = 4
+texture = ExtResource("2_p5uex")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

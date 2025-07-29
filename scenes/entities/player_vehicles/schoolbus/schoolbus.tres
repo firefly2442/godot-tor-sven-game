@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=2 format=3 uid="uid://b6f435xspe71g"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=3 format=3 uid="uid://b6f435xspe71g"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_ksw8w"]
+[ext_resource type="Texture2D" uid="uid://ch7ocv76wjxxy" path="res://scenes/entities/player_vehicles/schoolbus/schoolbus.png" id="2_2m27m"]
 
 [resource]
 script = ExtResource("1_ksw8w")
 speed = 10.0
 vehicletype = 3
+texture = ExtResource("2_2m27m")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

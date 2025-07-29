@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=2 format=3 uid="uid://dhgr0cdhk6bwe"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=3 format=3 uid="uid://dhgr0cdhk6bwe"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_me21k"]
+[ext_resource type="Texture2D" uid="uid://de2nqu1h070us" path="res://scenes/entities/player_vehicles/ambulance/ambulance.png" id="2_i5tvn"]
 
 [resource]
 script = ExtResource("1_me21k")
 speed = 20.0
 vehicletype = 0
+texture = ExtResource("2_i5tvn")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"
