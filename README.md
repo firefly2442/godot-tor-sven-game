@@ -25,3 +25,5 @@ from "Grounded" to "Floating".
 * [Godot Tutorials](https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg)
 * [GDQuest](https://www.youtube.com/c/Gdquest)
 * [KidsCanCode](https://www.youtube.com/c/KidscancodeOrg)
+* [WebTyler](https://wareya.github.io/webtyler/)
+* [Godot Tilemaps](https://www.youtube.com/watch?v=_SSInMAWd3g)
