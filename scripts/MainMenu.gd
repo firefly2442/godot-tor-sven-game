@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var rotation_speed: float = 30.0  # Degrees per second
-@onready var menuitems: Array[Node] = $%MenuContainer.get_children()
+@onready var menuitems: Array[Node] = %MenuContainer.get_children()
 var selected_index: int = 0
 var model_list: Array[String] = ["ambulance", "garbage-truck", "police", "tractor", "truck", "firetruck"]
 

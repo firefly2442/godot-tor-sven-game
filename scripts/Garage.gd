@@ -27,21 +27,21 @@ func _unhandled_input(_event: InputEvent) -> void:
 		
 	if Input.is_action_just_pressed("action_p1"):
 		player1_ready = true
-		$%Player1ReadyLabel.modulate = Color.GREEN
+		%Player1ReadyLabel.modulate = Color.GREEN
 	if Input.is_action_just_pressed("action_p2"):
 		player2_ready = true
-		$%Player2ReadyLabel.modulate = Color.GREEN
+		%Player2ReadyLabel.modulate = Color.GREEN
 	if Input.is_action_just_pressed("back_p1"):
 		player1_ready = false
-		$%Player1ReadyLabel.modulate = Color.WHITE
+		%Player1ReadyLabel.modulate = Color.WHITE
 	if Input.is_action_just_pressed("back_p2"):
 		player2_ready = false
-		$%Player2ReadyLabel.modulate = Color.WHITE
+		%Player2ReadyLabel.modulate = Color.WHITE
 
 func _process(_delta: float) -> void:
 	var vehicle: vehicle_resource = load(available_vehicles[selected_vehicle_index]).duplicate()
-	$%VehicleTextureRect.texture = vehicle.texture
-	$%VehicleLabel.text = vehicle.vehicle_type.keys()[vehicle.vehicletype]
+	%VehicleTextureRect.texture = vehicle.texture
+	%VehicleLabel.text = vehicle.vehicle_type.keys()[vehicle.vehicletype]
 	
 	Utility.selected_vehicle = vehicle
 	

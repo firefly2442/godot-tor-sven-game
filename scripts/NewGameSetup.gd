@@ -20,20 +20,20 @@ func _ready() -> void:
 	player2_label = %Player2
 	
 	if connected_pads.size() == 0:
-		$%Player1.texture = load("res://images/ui/keyboard.png")
-		$%Player1Label.text = "Player 1 - Keyboard"
-		$%Player2.texture = load("res://images/ui/keyboard.png")
-		$%Player2Label.text = "Player 2 - Keyboard"
+		%Player1.texture = load("res://images/ui/keyboard.png")
+		%Player1Label.text = "Player 1 - Keyboard"
+		%Player2.texture = load("res://images/ui/keyboard.png")
+		%Player2Label.text = "Player 2 - Keyboard"
 	elif connected_pads.size() == 1:
-		$%Player1.texture = load("res://images/ui/controller.png")
-		$%Player1Label.text = "Player 1 - Controller"
-		$%Player2.texture = load("res://images/ui/keyboard.png")
-		$%Player2Label.text = "Player 2 - Keyboard"
+		%Player1.texture = load("res://images/ui/controller.png")
+		%Player1Label.text = "Player 1 - Controller"
+		%Player2.texture = load("res://images/ui/keyboard.png")
+		%Player2Label.text = "Player 2 - Keyboard"
 	elif connected_pads.size() >= 2:
-		$%Player1.texture = load("res://images/ui/controller.png")
-		$%Player1Label.text = "Player 1 - Controller"
-		$%Player2.texture = load("res://images/ui/controller.png")
-		$%Player2Label.text = "Player 2 - Controller"
+		%Player1.texture = load("res://images/ui/controller.png")
+		%Player1Label.text = "Player 1 - Controller"
+		%Player2.texture = load("res://images/ui/controller.png")
+		%Player2Label.text = "Player 2 - Controller"
 	
 
 func _process(_delta: float) -> void:
@@ -45,7 +45,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var old_parent: Node = player1.get_parent()
 		if old_parent:
 			old_parent.remove_child(player1)
-			$%DriverVBoxContainer.add_child(player1)
+			%DriverVBoxContainer.add_child(player1)
 			player1.show()
 			player1.reset_size()
 			Utility.player1_selected = "Driver"
@@ -53,7 +53,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var old_parent: Node = player1.get_parent()
 		if old_parent:
 			old_parent.remove_child(player1)
-			$%OperatorVBoxContainer.add_child(player1)
+			%OperatorVBoxContainer.add_child(player1)
 			player1.show()
 			player1.reset_size()
 			Utility.player1_selected = "Operator"
@@ -61,7 +61,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var old_parent: Node = player2.get_parent()
 		if old_parent:
 			old_parent.remove_child(player2)
-			$%DriverVBoxContainer.add_child(player2)
+			%DriverVBoxContainer.add_child(player2)
 			player2.show()
 			player2.reset_size()
 			Utility.player2_selected = "Driver"
@@ -69,7 +69,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		var old_parent: Node = player2.get_parent()
 		if old_parent:
 			old_parent.remove_child(player2)
-			$%OperatorVBoxContainer.add_child(player2)
+			%OperatorVBoxContainer.add_child(player2)
 			player2.show()
 			player2.reset_size()
 			Utility.player2_selected = "Operator"

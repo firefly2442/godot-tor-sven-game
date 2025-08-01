@@ -7,7 +7,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	var scroll: ScrollContainer = $%ScrollContainer
+	var scroll: ScrollContainer = %ScrollContainer
 	var v_scrollbar: VScrollBar = scroll.get_v_scroll_bar()
 	
 	if not v_scrollbar.visible:

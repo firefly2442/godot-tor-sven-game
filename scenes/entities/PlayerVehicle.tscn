@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dawpfnhd7ujd6"]
+
+[ext_resource type="Script" uid="uid://y0di2axa4wre" path="res://scripts/entities/PlayerVehicle.gd" id="1_nhmhw"]
+[ext_resource type="Texture2D" uid="uid://de2nqu1h070us" path="res://scenes/entities/player_vehicles/ambulance/ambulance.png" id="2_83atq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urqdu"]
+size = Vector2(116, 56)
+
+[node name="PlayerVehicle" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_nhmhw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="VehicleSprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(2, 2)
+texture = ExtResource("2_83atq")
+
+[node name="VehicleCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_urqdu")

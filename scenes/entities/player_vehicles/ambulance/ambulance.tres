@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_me21k")
-speed = 20.0
+speed = 200.0
 vehicletype = 0
 texture = ExtResource("2_i5tvn")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"
