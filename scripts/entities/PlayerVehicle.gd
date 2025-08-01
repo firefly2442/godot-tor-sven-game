@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	%VehicleSprite2D.texture = Utility.selected_vehicle.texture
+	self.add_child(Utility.operator_equipment)
 
 func _physics_process(_delta: float) -> void:
 	if not Utility.paused:
