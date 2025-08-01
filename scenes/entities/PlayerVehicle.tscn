@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de2nqu1h070us" path="res://scenes/entities/player_vehicles/ambulance/ambulance.png" id="2_83atq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urqdu"]
-size = Vector2(116, 56)
+size = Vector2(76, 39)
 
 [node name="PlayerVehicle" type="CharacterBody2D"]
 motion_mode = 1
@@ -20,5 +20,5 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_83atq")
 
 [node name="VehicleCollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_urqdu")
