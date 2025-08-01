@@ -1,13 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://voobn11yad5i"]
+[gd_scene load_steps=4 format=3 uid="uid://voobn11yad5i"]
 
 [ext_resource type="Script" uid="uid://d07udmtibus4m" path="res://scripts/entities/WaterHose.gd" id="1_5misx"]
 [ext_resource type="Texture2D" uid="uid://bnd4b3xqtj4an" path="res://scenes/entities/player_vehicles/firetruck/waterhose.png" id="2_kk4k8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kk4k8"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 5.0
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 19.75
+scale_min = 3.0
+scale_max = 6.0
+color = Color(0.638753, 0.758185, 1, 1)
 
 [node name="WaterHose" type="Node2D"]
 script = ExtResource("1_5misx")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true
+amount = 400
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_kk4k8")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 unique_name_in_owner = true
@@ -17,4 +34,5 @@ unique_name_in_owner = true
 
 [node name="HoseSprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_kk4k8")
