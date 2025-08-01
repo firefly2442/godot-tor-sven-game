@@ -43,6 +43,10 @@ func _add_controller_input(player_prefix: String, device_id: int) -> void:
 		"back": {
 			"type": "button",
 			"button_index": JOY_BUTTON_B  # B button on Xbox controller
+		},
+		"escape": {
+			"type": "button",
+			"button_index": JOY_BUTTON_START  # start button on Xbox controller
 		}
 	}
 
