@@ -6,6 +6,7 @@ class_name vehicle_resource
 @export var texture: Texture2D ## image texture of vehicle
 @export var vehicle_engine_sound: AudioStream ## the vehicle engine sound
 @export var vehicle_horn_sound: AudioStream ## the vehicle horn sound
+@export var operator_sound_back: AudioStream ## the operator controlled sound via back button
 
 enum vehicle_type {
 	AMBULANCE,

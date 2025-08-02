@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=5 format=3 uid="uid://ccnrt1tmmm6dj"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=6 format=3 uid="uid://ccnrt1tmmm6dj"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_d1erk"]
+[ext_resource type="AudioStream" uid="uid://bfm6lca8ickg5" path="res://sounds/vehicles/police_siren.ogg" id="1_exadi"]
 [ext_resource type="Texture2D" uid="uid://du64q8qi84wu0" path="res://scenes/entities/player_vehicles/policecar/policecar.png" id="2_85aft"]
 [ext_resource type="AudioStream" uid="uid://cr1dticqeexdu" path="res://sounds/vehicles/car_front_engine.ogg" id="3_8dplr"]
 [ext_resource type="AudioStream" uid="uid://cn5mm1hpf7in1" path="res://sounds/vehicles/car-horn.ogg" id="4_45k8v"]
@@ -12,4 +13,5 @@ vehicletype = 2
 texture = ExtResource("2_85aft")
 vehicle_engine_sound = ExtResource("3_8dplr")
 vehicle_horn_sound = ExtResource("4_45k8v")
+operator_sound_back = ExtResource("1_exadi")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

@@ -16,6 +16,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("action_p1") or \
 	Utility.player2_selected == "Driver" and Input.is_action_just_pressed("action_p2"):
 		AudioManager.play(Utility.selected_vehicle.vehicle_horn_sound.resource_path)
+	if Utility.player1_selected == "Operator" and Input.is_action_just_pressed("back_p1") or \
+	Utility.player2_selected == "Operator" and Input.is_action_just_pressed("back_p2"):
+		AudioManager.play(Utility.selected_vehicle.operator_sound_back.resource_path)
 
 func _physics_process(_delta: float) -> void:
 	if not Utility.paused:

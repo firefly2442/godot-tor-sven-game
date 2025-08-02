@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=5 format=3 uid="uid://dhgr0cdhk6bwe"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=6 format=3 uid="uid://dhgr0cdhk6bwe"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_me21k"]
+[ext_resource type="AudioStream" uid="uid://bfm6lca8ickg5" path="res://sounds/vehicles/police_siren.ogg" id="1_nhx3g"]
 [ext_resource type="Texture2D" uid="uid://de2nqu1h070us" path="res://scenes/entities/player_vehicles/ambulance/ambulance.png" id="2_i5tvn"]
 [ext_resource type="AudioStream" uid="uid://cd7yhnb6wtvun" path="res://sounds/vehicles/truck-horn-double-short-length.ogg" id="3_5brgv"]
 [ext_resource type="AudioStream" uid="uid://bx4jjl10tlbkn" path="res://sounds/vehicles/engine_of_the_fire_truck.ogg" id="3_mx434"]
@@ -12,4 +13,5 @@ vehicletype = 0
 texture = ExtResource("2_i5tvn")
 vehicle_engine_sound = ExtResource("3_mx434")
 vehicle_horn_sound = ExtResource("3_5brgv")
+operator_sound_back = ExtResource("1_nhx3g")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

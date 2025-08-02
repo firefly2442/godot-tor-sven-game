@@ -36,3 +36,15 @@ File: car_front_engine.ogg (converted from wav)
 https://freesound.org/people/keweldog/sounds/182474/
 License: Creative Commons
 File: car-horn.ogg (converted from wav)
+
+https://freesound.org/people/guitarguy1985/sounds/70938/
+License: Creative Commons
+File: police_siren.ogg (converted from wav)
+
+https://freesound.org/people/staikov/sounds/244332/
+License: Creative Commons
+File: kids_laugh_short.ogg (converted from wav)
+
+https://freesound.org/people/metrostock99/sounds/514703/
+License: Creative Commons
+File: hot_bath_accent.ogg (converted from wav, slightly shortened)
