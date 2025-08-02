@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=3 format=3 uid="uid://b6f435xspe71g"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=5 format=3 uid="uid://b6f435xspe71g"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_ksw8w"]
 [ext_resource type="Texture2D" uid="uid://ch7ocv76wjxxy" path="res://scenes/entities/player_vehicles/schoolbus/schoolbus.png" id="2_2m27m"]
+[ext_resource type="AudioStream" uid="uid://cd7yhnb6wtvun" path="res://sounds/vehicles/truck-horn-double-short-length.ogg" id="3_bfh34"]
+[ext_resource type="AudioStream" uid="uid://bx4jjl10tlbkn" path="res://sounds/vehicles/engine_of_the_fire_truck.ogg" id="3_ecxy3"]
 
 [resource]
 script = ExtResource("1_ksw8w")
 speed = 100.0
 vehicletype = 3
 texture = ExtResource("2_2m27m")
+vehicle_engine_sound = ExtResource("3_ecxy3")
+vehicle_horn_sound = ExtResource("3_bfh34")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

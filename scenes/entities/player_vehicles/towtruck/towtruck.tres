@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=3 format=3 uid="uid://beu2y01pvh78r"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=5 format=3 uid="uid://beu2y01pvh78r"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_3q68h"]
 [ext_resource type="Texture2D" uid="uid://bi4jriyfvk3tf" path="res://scenes/entities/player_vehicles/towtruck/towtruck.png" id="2_p5uex"]
+[ext_resource type="AudioStream" uid="uid://cd7yhnb6wtvun" path="res://sounds/vehicles/truck-horn-double-short-length.ogg" id="3_4nd1b"]
+[ext_resource type="AudioStream" uid="uid://bx4jjl10tlbkn" path="res://sounds/vehicles/engine_of_the_fire_truck.ogg" id="3_acbrn"]
 
 [resource]
 script = ExtResource("1_3q68h")
 speed = 120.0
 vehicletype = 4
 texture = ExtResource("2_p5uex")
+vehicle_engine_sound = ExtResource("3_acbrn")
+vehicle_horn_sound = ExtResource("3_4nd1b")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"
