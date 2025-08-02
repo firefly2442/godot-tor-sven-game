@@ -19,6 +19,8 @@ from "Grounded" to "Floating".
 * Use "modulate" on sprites to set the color
 * Use Parallax backgrounds to move items in the background at a slower speed
 * Use `##` for comments and to do variable documentation in GDScript
+* Built for 1920x1080 resolution, changes may break the game
+* Keyboard and controller supported
 
 ## Youtube Channels
 

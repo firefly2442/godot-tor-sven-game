@@ -11,6 +11,7 @@ func _ready() -> void:
 	%Player1Role.text = Utility.player1_selected
 	%Player2Role.text = Utility.player2_selected
 	MissionGenerator.clearMissions() # clear any potential past missions
+	MissionGenerator.startGeneratingMissions() # start generating missions
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_p1") or event.is_action_pressed("escape_p2"):

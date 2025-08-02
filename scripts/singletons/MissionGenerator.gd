@@ -8,15 +8,20 @@ var BOTTOM_RIGHT_Y: int = 1337
 
 @export var max_missions: int = 6 ## maximum number of active missions at once
 var mission_type: String = "Pending"
-var number_active_missions: int = 0
+var number_active_missions: int = 0 ## the number of active missions, integer
 
 func _ready() -> void:
-	%Timer.start()
+	pass
 
 func clearMissions() -> void:
 	for child in %Missions.get_children():
 		child.queue_free()
 
+func startGeneratingMissions() -> void:
+	%Timer.start()
+
+func stopGeneratingMissions() -> void:
+	%Timer.stop()
 
 func _on_timer_timeout() -> void:
 	if number_active_missions < max_missions:

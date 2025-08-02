@@ -37,5 +37,7 @@ func _on_save_btn_pressed() -> void:
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (self._settings.vsync) else DisplayServer.VSYNC_DISABLED)
 
 
-func _on_cancel_btn_pressed() -> void:
-	SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("back_p1") or Input.is_action_just_pressed("back_p2") or \
+	Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
+		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu

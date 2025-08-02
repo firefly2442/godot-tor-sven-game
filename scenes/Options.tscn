@@ -102,20 +102,3 @@ step = 5.0
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "High"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="Cancel_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Cancel"
-
-[node name="Save_btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Save"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Cancel_btn" to="." method="_on_cancel_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Save_btn" to="." method="_on_save_btn_pressed"]

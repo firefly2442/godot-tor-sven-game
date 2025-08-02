@@ -1,0 +1,553 @@
+[gd_scene load_steps=22 format=3 uid="uid://dq6ja7ouhyi51"]
+
+[ext_resource type="Script" uid="uid://bu46e4krp17wl" path="res://scripts/Controls.gd" id="1_5dcjj"]
+[ext_resource type="Texture2D" uid="uid://cp0vthd2d8w1h" path="res://images/ui/keyboard_w.png" id="2_lqn12"]
+[ext_resource type="Texture2D" uid="uid://4f4g8fx2fdht" path="res://images/ui/keyboard_a.png" id="3_po4s7"]
+[ext_resource type="Texture2D" uid="uid://b27m2e0ni2788" path="res://images/ui/keyboard_s.png" id="4_lspxa"]
+[ext_resource type="Texture2D" uid="uid://bcuy40oypou47" path="res://images/ui/keyboard_d.png" id="5_w7yf0"]
+[ext_resource type="Texture2D" uid="uid://mtn5ek4rto25" path="res://images/ui/keyboard_e.png" id="6_w7yf0"]
+[ext_resource type="Texture2D" uid="uid://dia67g3vvosi5" path="res://images/ui/keyboard_q.png" id="7_gulgq"]
+[ext_resource type="Texture2D" uid="uid://no057xbo5wp7" path="res://images/ui/keyboard_escape.png" id="8_1lfq6"]
+[ext_resource type="Texture2D" uid="uid://dtxy0rs8vv3jr" path="res://images/ui/keyboard_arrow_up.png" id="9_6tcr1"]
+[ext_resource type="Texture2D" uid="uid://cgsvoeusrvc3s" path="res://images/ui/keyboard_backspace_icon.png" id="9_gulgq"]
+[ext_resource type="Texture2D" uid="uid://dhbxtfcod8o14" path="res://images/ui/xbox_stick_l_up.png" id="9_hqg07"]
+[ext_resource type="Texture2D" uid="uid://coku64iwkdkh6" path="res://images/ui/keyboard_arrow_left.png" id="10_1aq3p"]
+[ext_resource type="Texture2D" uid="uid://doc8iub0ug0w4" path="res://images/ui/keyboard_enter.png" id="10_1lfq6"]
+[ext_resource type="Texture2D" uid="uid://bejopfhmvqjma" path="res://images/ui/xbox_stick_l_left.png" id="10_bmksv"]
+[ext_resource type="Texture2D" uid="uid://6sjgi41jxr" path="res://images/ui/keyboard_arrow_down.png" id="11_1f26w"]
+[ext_resource type="Texture2D" uid="uid://ba1iyrsahs8o2" path="res://images/ui/xbox_stick_l_down.png" id="11_5wpvi"]
+[ext_resource type="Texture2D" uid="uid://dljpa36kvyrrd" path="res://images/ui/xbox_stick_l_right.png" id="12_rn4hu"]
+[ext_resource type="Texture2D" uid="uid://cxqjp3popewy6" path="res://images/ui/keyboard_arrow_right.png" id="12_tj2n8"]
+[ext_resource type="Texture2D" uid="uid://dt0o42ouafxkq" path="res://images/ui/xbox_button_color_a.png" id="13_rn4hu"]
+[ext_resource type="Texture2D" uid="uid://bebse2qe5jm0f" path="res://images/ui/xbox_button_color_b.png" id="14_d0dk2"]
+[ext_resource type="Texture2D" uid="uid://c0p8osvp2n2cp" path="res://images/ui/xbox_button_start_icon.png" id="15_jhxpp"]
+
+[node name="Controls" type="Node2D"]
+script = ExtResource("1_5dcjj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Player1VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Player1Label" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Player 1"
+horizontal_alignment = 1
+
+[node name="KeyboardLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Keyboard:"
+
+[node name="KeyboardHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Up"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_lqn12")
+
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Left"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_po4s7")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Down"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("4_lspxa")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Right"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("5_w7yf0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_w7yf0")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Back"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("7_gulgq")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Escape"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("8_1lfq6")
+
+[node name="ControllerLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Controller:"
+
+[node name="Player1ControllerHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Up"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_hqg07")
+
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Left"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("10_bmksv")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Down"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("11_5wpvi")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Right"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("12_rn4hu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_rn4hu")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Back"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("14_d0dk2")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Escape"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("15_jhxpp")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Player2VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Player2Label" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Player 2"
+horizontal_alignment = 1
+
+[node name="KeyboardLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Keyboard:"
+
+[node name="KeyboardHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Up"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_6tcr1")
+
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Left"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("10_1aq3p")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Down"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("11_1f26w")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Right"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("12_tj2n8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_1lfq6")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Back"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("9_gulgq")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Escape"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("8_1lfq6")
+
+[node name="ControllerLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Controller:"
+
+[node name="Player2ControllerHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Up"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_hqg07")
+
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Left"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("10_bmksv")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Down"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("11_5wpvi")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Right"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("12_rn4hu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_rn4hu")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Back"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("14_d0dk2")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Escape"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("15_jhxpp")
