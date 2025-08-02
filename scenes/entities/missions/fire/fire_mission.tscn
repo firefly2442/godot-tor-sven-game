@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhff7y7sbn8ga"]
+[gd_scene load_steps=16 format=3 uid="uid://bhff7y7sbn8ga"]
 
 [ext_resource type="Texture2D" uid="uid://dx8yn5pihagu0" path="res://scenes/entities/missions/fire/fire_02.png" id="1_oybr4"]
+[ext_resource type="Script" uid="uid://cvfp4fjtwdica" path="res://scripts/entities/missions/fire_mission.gd" id="1_shvia"]
 [ext_resource type="Texture2D" uid="uid://dxy5dgheyinsk" path="res://scenes/entities/missions/fire/smoke_07.png" id="2_u6sdm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u6sdm"]
@@ -59,8 +60,10 @@ color_ramp = SubResource("GradientTexture1D_shvia")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6sdm"]
 
 [node name="FireMission" type="Node2D"]
+script = ExtResource("1_shvia")
 
 [node name="FireGPUParticles2D" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 4
 material = SubResource("CanvasItemMaterial_u6sdm")
 amount = 32
@@ -69,6 +72,7 @@ preprocess = 1.0
 process_material = SubResource("ParticleProcessMaterial_pmjo1")
 
 [node name="SmokeGPUParticles2D" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -55)
 amount = 32
 texture = ExtResource("2_u6sdm")
@@ -77,8 +81,16 @@ preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_xw388")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_u6sdm")
+
+[node name="FireOutTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="FireOutTimer" to="." method="_on_fire_out_timer_timeout"]

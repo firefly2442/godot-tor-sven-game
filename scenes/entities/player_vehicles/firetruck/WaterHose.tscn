@@ -28,6 +28,7 @@ process_material = SubResource("ParticleProcessMaterial_kk4k8")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 unique_name_in_owner = true
+rotation = -1.5708
 enabled = false
 collision_mask = 2
 

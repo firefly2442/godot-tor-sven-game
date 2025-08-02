@@ -1,14 +1,21 @@
 extends Node2D
 
+signal fire_out(staticbody2d_id: int)
 
 func _ready() -> void:
 	$GPUParticles2D.emitting = false
-
+	# use Debug -> Visible Collision Shapes to show the raycast
+	# and debug the target_position which dictates the length
+	# of the raycast so it matches the length of the water spray
+	%RayCast2D.target_position = Vector2(0, 375)
+	connect("fire_out", Callable(get_parent(), "lostGame"))
 
 func _physics_process(_delta: float) -> void:
 	if %RayCast2D.is_colliding():
-		var hit_pos: Vector2 = %RayCast2D.get_collision_point()
-		print_debug(hit_pos)
+		var collider: Node = %RayCast2D.get_collider()
+		print_debug(collider)
+		scene_a_instance.connect("fire_out", Callable(self, "_on_fire_out"))
+		
 
 func _process(_delta: float) -> void:
 	var hose_direction: Vector2 = Vector2.ZERO

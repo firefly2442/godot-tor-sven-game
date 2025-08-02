@@ -21,6 +21,7 @@ config/windows_native_icon="res://icon.ico"
 SceneSwitcher="*res://scripts/singletons/SceneSwitcher.gd"
 AudioManager="*res://scripts/singletons/AudioManager.gd"
 Utility="*res://scripts/singletons/Utility.gd"
+MissionGenerator="*res://scenes/singletons/MissionGenerator.tscn"
 
 [debug]
 
