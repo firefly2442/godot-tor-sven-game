@@ -21,6 +21,7 @@ from "Grounded" to "Floating".
 * Use `##` for comments and to do variable documentation in GDScript
 * Built for 1920x1080 resolution, changes may break the game
 * Keyboard and controller supported
+* Use `Debug -> Visible Collision Shapes` for debugging collisions and physics
 
 ## Youtube Channels
 

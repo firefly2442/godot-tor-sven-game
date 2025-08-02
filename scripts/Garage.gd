@@ -13,7 +13,20 @@ var player1_ready: bool = false
 var player2_ready: bool = false
 
 func _ready() -> void:
-	pass
+	if (Utility.player1_selected == "Driver" and Utility.player1_controls == "Controller") or \
+	(Utility.player2_selected == "Driver" and Utility.player2_controls == "Controller"):
+		%LeftTextureRect.texture = load("uid://bejopfhmvqjma")
+		%RightTextureRect.texture = load("uid://dljpa36kvyrrd")
+		
+	if Utility.player1_controls == "Keyboard":
+		%Player1ReadyIconTextureRect.texture = load("uid://mtn5ek4rto25")
+	elif Utility.player1_controls == "Controller":
+		%Player1ReadyIconTextureRect.texture = load("uid://dt0o42ouafxkq")
+	
+	if Utility.player2_controls == "Keyboard":
+		%Player2ReadyIconTextureRect.texture = load("uid://doc8iub0ug0w4")
+	elif Utility.player2_controls == "Controller":
+		%Player2ReadyIconTextureRect.texture = load("uid://dt0o42ouafxkq")
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") and selected_vehicle_index != 0:
@@ -47,3 +60,16 @@ func _process(_delta: float) -> void:
 	
 	if player1_ready and player2_ready:
 		SceneSwitcher.switch_scene("uid://y2yrudm57l61") # Load into the City
+	
+	if selected_vehicle_index == 0:
+		%LeftTextureRect.modulate = Color(1,1,1,0.5)
+		%LeftTextureImage.modulate = Color(1,1,1,0.5)
+	else:
+		%LeftTextureRect.modulate = Color(1,1,1,1)
+		%LeftTextureImage.modulate = Color(1,1,1,1)
+	if selected_vehicle_index == available_vehicles.size()-1:
+		%RightTextureRect.modulate = Color(1,1,1,0.5)
+		%RightTextureImage.modulate = Color(1,1,1,0.5)
+	else:
+		%RightTextureRect.modulate = Color(1,1,1,1)
+		%RightTextureImage.modulate = Color(1,1,1,1)

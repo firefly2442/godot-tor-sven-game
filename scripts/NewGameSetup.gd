@@ -22,22 +22,32 @@ func _ready() -> void:
 	if connected_pads.size() == 0:
 		%Player1.texture = load("res://images/ui/keyboard.png")
 		%Player1Label.text = "Player 1 - Keyboard"
+		Utility.player1_controls = "Keyboard"
 		%Player2.texture = load("res://images/ui/keyboard.png")
 		%Player2Label.text = "Player 2 - Keyboard"
+		Utility.player2_controls = "Keyboard"
 	elif connected_pads.size() == 1:
 		%Player1.texture = load("res://images/ui/controller.png")
 		%Player1Label.text = "Player 1 - Controller"
+		Utility.player1_controls = "Controller"
 		%Player2.texture = load("res://images/ui/keyboard.png")
 		%Player2Label.text = "Player 2 - Keyboard"
+		Utility.player2_controls = "Keyboard"
 	elif connected_pads.size() >= 2:
 		%Player1.texture = load("res://images/ui/controller.png")
 		%Player1Label.text = "Player 1 - Controller"
+		Utility.player1_controls = "Controller"
 		%Player2.texture = load("res://images/ui/controller.png")
 		%Player2Label.text = "Player 2 - Controller"
+		Utility.player2_controls = "Controller"
 	
 
 func _process(_delta: float) -> void:
-	if player1_ready and player2_ready and ((Utility.player1_selected == "Operator" and Utility.player2_selected == "Driver") or (Utility.player1_selected == "Driver" and Utility.player2_selected == "Operator")):
+	if player1_ready and player2_ready and \
+	 (
+		(Utility.player1_selected == "Operator" and Utility.player2_selected == "Driver") or \
+		(Utility.player1_selected == "Driver" and Utility.player2_selected == "Operator") \
+	 ):
 		SceneSwitcher.switch_scene("uid://b5t5uspulig2g") # Load into the Garage
 	
 func _unhandled_input(_event: InputEvent) -> void:

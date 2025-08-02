@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5t5uspulig2g"]
+[gd_scene load_steps=8 format=3 uid="uid://b5t5uspulig2g"]
 
 [ext_resource type="Script" uid="uid://miwv1qfonbif" path="res://scripts/Garage.gd" id="1_75lht"]
+[ext_resource type="Texture2D" uid="uid://mtn5ek4rto25" path="res://images/ui/keyboard_e.png" id="2_uwphw"]
 [ext_resource type="Texture2D" uid="uid://de2nqu1h070us" path="res://scenes/entities/player_vehicles/ambulance/ambulance.png" id="2_vgbj5"]
+[ext_resource type="Texture2D" uid="uid://4f4g8fx2fdht" path="res://images/ui/keyboard_a.png" id="5_3uxhb"]
+[ext_resource type="Texture2D" uid="uid://bcuy40oypou47" path="res://images/ui/keyboard_d.png" id="6_imsuq"]
+[ext_resource type="Texture2D" uid="uid://ckjrg7loeuikr" path="res://images/ui/arrowLeft.png" id="6_rd182"]
+[ext_resource type="Texture2D" uid="uid://dbd7jikssh7qk" path="res://images/ui/arrowRight.png" id="7_6t0ip"]
 
 [node name="Garage" type="Node2D"]
 script = ExtResource("1_75lht")
@@ -24,9 +29,15 @@ size_flags_horizontal = 3
 [node name="Player1ReadyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Player 1 Ready"
 horizontal_alignment = 1
+
+[node name="Player1ReadyIconTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_uwphw")
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -46,27 +57,41 @@ texture = ExtResource("2_vgbj5")
 expand_mode = 4
 stretch_mode = 5
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_3uxhb")
+stretch_mode = 5
+
+[node name="LeftTextureImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_rd182")
+
+[node name="RightTextureImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_6t0ip")
+
+[node name="RightTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_imsuq")
+stretch_mode = 5
+
 [node name="VehicleLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Ambulance"
 horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="HornLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Horn:"
-
-[node name="SelectedHornLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Standard"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -75,6 +100,12 @@ size_flags_horizontal = 3
 [node name="Player2ReadyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Player 2 Ready"
 horizontal_alignment = 1
+
+[node name="Player2ReadyIconTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_uwphw")
+stretch_mode = 5
