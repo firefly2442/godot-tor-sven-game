@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://bhff7y7sbn8ga"]
+
+[ext_resource type="Texture2D" uid="uid://dx8yn5pihagu0" path="res://scenes/entities/missions/fire/fire_02.png" id="1_oybr4"]
+[ext_resource type="Texture2D" uid="uid://dxy5dgheyinsk" path="res://scenes/entities/missions/fire/smoke_07.png" id="2_u6sdm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u6sdm"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_shvia"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 78.908), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xw388"]
+curve = SubResource("Curve_shvia")
+
+[sub_resource type="Gradient" id="Gradient_oybr4"]
+offsets = PackedFloat32Array(0, 0.143885, 0.546763, 1)
+colors = PackedColorArray(0, 0, 1, 1, 1, 0.145098, 0.145098, 1, 0.805584, 0.429154, 0.254408, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u6sdm"]
+gradient = SubResource("Gradient_oybr4")
+
+[sub_resource type="Curve" id="Curve_88jla"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.120253, 1), 0.0, 0.0, 0, 0, Vector2(0.512658, 0.569033), 0.0, 0.0, 0, 0, Vector2(0.958861, 0.0417317), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_kdlll"]
+curve = SubResource("Curve_88jla")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pmjo1"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+angle_min = 1.07288e-05
+angle_max = 360.0
+angular_velocity_curve = SubResource("CurveTexture_xw388")
+gravity = Vector3(0, -250, 0)
+scale_curve = SubResource("CurveTexture_kdlll")
+color_ramp = SubResource("GradientTexture1D_u6sdm")
+
+[sub_resource type="Gradient" id="Gradient_u6sdm"]
+offsets = PackedFloat32Array(0, 0.226619, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.501961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_shvia"]
+gradient = SubResource("Gradient_u6sdm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xw388"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+angle_min = 1.07288e-05
+angle_max = 360.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 100.0
+linear_accel_max = 200.0
+color_ramp = SubResource("GradientTexture1D_shvia")
+
+[node name="FireMission" type="Node2D"]
+
+[node name="FireGPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_u6sdm")
+amount = 32
+texture = ExtResource("1_oybr4")
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_pmjo1")
+
+[node name="SmokeGPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -55)
+amount = 32
+texture = ExtResource("2_u6sdm")
+lifetime = 2.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_xw388")
