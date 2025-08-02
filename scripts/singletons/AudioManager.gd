@@ -2,8 +2,10 @@ extends Node
 
 var num_players: int = 8
 
-var available: Array = []  # The available players.
-var queue: Array = []  # The queue of sounds to play.
+var available: Array = []                # pool of free players
+var queue: Array = []                    # pending sound path strings
+var active_sounds: Dictionary = {}       # sound_path -> true (queued or playing)
+var player_to_sound: Dictionary = {}     # player -> sound_path
 
 var background_music: AudioStreamPlayer = AudioStreamPlayer.new()
 
@@ -30,9 +32,14 @@ func _ready() -> void:
 	add_child(background_music)
 	playBackgroundMusic()
 
-func _on_stream_finished(stream: Node) -> void:
+func _on_stream_finished(player: AudioStreamPlayer) -> void:
 	# When finished playing a stream, make the player available again.
-	available.append(stream)
+	# clear tracking so the sound can be reused
+	if player in player_to_sound:
+		var sound_path: String = player_to_sound[player]
+		active_sounds.erase(sound_path)
+		player_to_sound.erase(player)
+	available.append(player)
 
 func playBackgroundMusic() -> void:
 	background_music.stream = load("uid://corfcbmyxa761")
@@ -45,8 +52,27 @@ func playBackgroundEnvironmental() -> void:
 	background_music.play()
 
 func play(sound_path: String) -> void:
-	if sound_path not in queue:
-		queue.append(sound_path)
+	if active_sounds.has(sound_path):
+		return  # already queued or playing
+	queue.append(sound_path)
+	active_sounds[sound_path] = true
+
+# Stop a specific sound (queued or playing)
+func stop(sound_path: String) -> void:
+	# remove from queue if present
+	if queue.has(sound_path):
+		queue.erase(sound_path)
+		active_sounds.erase(sound_path)
+
+	# if it’s playing, find the player and stop it
+	for player: Node in player_to_sound.keys():
+		if player_to_sound[player] == sound_path:
+			player.stop()  # immediate
+			# cleanup as if finished
+			active_sounds.erase(sound_path)
+			player_to_sound.erase(player)
+			if not available.has(player):
+				available.append(player)
 
 
 func _process(_delta: float) -> void:
@@ -56,9 +82,12 @@ func _process(_delta: float) -> void:
 	
 	# Play a queued sound if any players are available.
 	if not queue.is_empty() and not available.is_empty():
-		available[0].stream = load(queue.pop_front())
-		available[0].play()
-		available.pop_front()
+		var sound_path: String = queue.pop_front()
+		var player: AudioStreamPlayer = available.pop_front()
+		player.stream = load(sound_path)
+		player.play()
+		player_to_sound[player] = sound_path
+		# already marked active when queued
 
 func playUISwitch() -> void:
 	self.play("uid://bful7jl81wf4a")

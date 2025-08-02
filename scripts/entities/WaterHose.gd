@@ -32,6 +32,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if $GPUParticles2D.emitting:
 			$GPUParticles2D.emitting = false
 			%RayCast2D.enabled = false
+			AudioManager.stop("uid://sk6fl0i0ef8x")
 		else:
 			$GPUParticles2D.emitting = true
 			%RayCast2D.enabled = true
+			AudioManager.play("uid://sk6fl0i0ef8x")
