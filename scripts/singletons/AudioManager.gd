@@ -27,15 +27,22 @@ func _ready() -> void:
 	
 	# setup the background music
 	# imported to "loop" when finished
-	#add_child(background_music)
-	#background_music.stream = load("res://sounds/background.ogg")
-	#background_music.bus = "background"
-	#background_music.play()
+	add_child(background_music)
+	playBackgroundMusic()
 
 func _on_stream_finished(stream: Node) -> void:
 	# When finished playing a stream, make the player available again.
 	available.append(stream)
 
+func playBackgroundMusic() -> void:
+	background_music.stream = load("uid://corfcbmyxa761")
+	background_music.bus = "background"
+	background_music.play()
+
+func playBackgroundEnvironmental() -> void:
+	background_music.stream = load("uid://bwsgkvpkk2a8k")
+	background_music.bus = "background"
+	background_music.play()
 
 func play(sound_path: String) -> void:
 	if sound_path not in queue:
@@ -52,3 +59,9 @@ func _process(_delta: float) -> void:
 		available[0].stream = load(queue.pop_front())
 		available[0].play()
 		available.pop_front()
+
+func playUISwitch() -> void:
+	self.play("uid://bful7jl81wf4a")
+
+func playUIClick() -> void:
+	self.play("uid://ddbbs308w3mbk")

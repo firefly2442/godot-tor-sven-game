@@ -46,13 +46,13 @@ text = "
 
 "
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="CreditsLabel2" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="PoweredByLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Powered by the Godot Game Engine"
@@ -67,30 +67,32 @@ layout_mode = 2
 texture = ExtResource("2_gpaav")
 stretch_mode = 4
 
-[node name="Label3" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="CreditsLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Programming:
-
 Patrick Carlson
 
 Game Design:
-
 Patrick Carlson
 
 QA Testers:
-
 Lina Huang
 
 Graphics:
-
 Kenney
 https://kenney.nl
 
-Thanks To:
-
-Tor, Sven, and the entire family!
-Kenney for art assets
+Audio:
+Kenney
 https://kenney.nl
-The Godot community"
+FreeSound
+https://freesound.org
+
+Thanks To:
+Tor, Sven, and the entire family!
+Kenney for assets
+https://kenney.nl
+The Godot community
+Open Source Software"
 horizontal_alignment = 1

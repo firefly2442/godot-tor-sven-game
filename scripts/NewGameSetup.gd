@@ -59,6 +59,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			player1.show()
 			player1.reset_size()
 			Utility.player1_selected = "Driver"
+			AudioManager.playUISwitch()
 	if Input.is_action_just_pressed("right_p1"):
 		var old_parent: Node = player1.get_parent()
 		if old_parent:
@@ -67,6 +68,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			player1.show()
 			player1.reset_size()
 			Utility.player1_selected = "Operator"
+			AudioManager.playUISwitch()
 	if Input.is_action_just_pressed("left_p2"):
 		var old_parent: Node = player2.get_parent()
 		if old_parent:
@@ -75,6 +77,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			player2.show()
 			player2.reset_size()
 			Utility.player2_selected = "Driver"
+			AudioManager.playUISwitch()
 	if Input.is_action_just_pressed("right_p2"):
 		var old_parent: Node = player2.get_parent()
 		if old_parent:
@@ -83,19 +86,25 @@ func _unhandled_input(_event: InputEvent) -> void:
 			player2.show()
 			player2.reset_size()
 			Utility.player2_selected = "Operator"
+			AudioManager.playUISwitch()
 			
 	if Input.is_action_just_pressed("action_p1"):
 		player1_ready = true
 		player1_label.modulate = Color.GREEN
+		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("action_p2"):
 		player2_ready = true
 		player2_label.modulate = Color.GREEN
+		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("back_p1"):
 		player1_ready = false
 		player1_label.modulate = Color.WHITE
+		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("back_p2"):
 		player2_ready = false
 		player2_label.modulate = Color.WHITE
+		AudioManager.playUIClick()
 	
 	if Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
+		AudioManager.playUIClick()
 		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu

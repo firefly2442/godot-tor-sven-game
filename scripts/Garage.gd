@@ -29,27 +29,31 @@ func _ready() -> void:
 		%Player2ReadyIconTextureRect.texture = load("uid://dt0o42ouafxkq")
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") and selected_vehicle_index != 0:
-		selected_vehicle_index = selected_vehicle_index - 1
-	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("right_p1") and selected_vehicle_index != available_vehicles.size()-1:
+	if (Utility.player1_selected == "Driver" and Input.is_action_just_pressed("right_p1") and selected_vehicle_index != available_vehicles.size()-1) or \
+	(Utility.player2_selected == "Driver" and Input.is_action_just_pressed("right_p2") and selected_vehicle_index != available_vehicles.size()-1):
 		selected_vehicle_index = selected_vehicle_index + 1
-	if Utility.player2_selected == "Driver" and Input.is_action_just_pressed("left_p2") and selected_vehicle_index != 0:
+		AudioManager.playUISwitch()
+	if (Utility.player2_selected == "Driver" and Input.is_action_just_pressed("left_p2") and selected_vehicle_index != 0) or \
+	(Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") and selected_vehicle_index != 0):
 		selected_vehicle_index = selected_vehicle_index - 1
-	if Utility.player2_selected == "Driver" and Input.is_action_just_pressed("right_p2") and selected_vehicle_index != available_vehicles.size()-1:
-		selected_vehicle_index = selected_vehicle_index + 1
+		AudioManager.playUISwitch()
 	
 	if Input.is_action_just_pressed("action_p1"):
 		player1_ready = true
 		%Player1ReadyLabel.modulate = Color.GREEN
+		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("action_p2"):
 		player2_ready = true
 		%Player2ReadyLabel.modulate = Color.GREEN
+		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("back_p1"):
 		player1_ready = false
 		%Player1ReadyLabel.modulate = Color.WHITE
+		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("back_p2"):
 		player2_ready = false
 		%Player2ReadyLabel.modulate = Color.WHITE
+		AudioManager.playUIClick()
 	
 	if Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
 		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu

@@ -10,11 +10,14 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("down_p1") or event.is_action_pressed("down_p2"):
 		selected_index = (selected_index + 1) % menuitems.size()
+		AudioManager.playUISwitch()
 		update_selection()
 	elif event.is_action_pressed("up_p1") or event.is_action_pressed("up_p2"):
 		selected_index = (selected_index - 1 + menuitems.size()) % menuitems.size()
+		AudioManager.playUISwitch()
 		update_selection()
 	elif event.is_action_pressed("action_p1") or event.is_action_pressed("action_p2"):
+		AudioManager.playUIClick()
 		_on_item_selected(selected_index)
 
 func update_selection() -> void:
@@ -31,4 +34,7 @@ func _on_item_selected(index: int) -> void:
 		get_tree().paused = false
 		self.queue_free()  # remove the menu
 	elif index == 1:
+		Utility.paused = false
+		get_tree().paused = false
+		AudioManager.playBackgroundMusic()
 		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
