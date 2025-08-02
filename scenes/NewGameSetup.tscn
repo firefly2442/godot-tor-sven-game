@@ -33,7 +33,7 @@ size_flags_horizontal = 3
 [node name="ControllerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Select Controller"
+text = "Select Role"
 horizontal_alignment = 1
 
 [node name="Player1Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]

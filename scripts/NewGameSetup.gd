@@ -96,3 +96,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("back_p2"):
 		player2_ready = false
 		player2_label.modulate = Color.WHITE
+	
+	if Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
+		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
