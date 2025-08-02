@@ -4,6 +4,14 @@ func _ready() -> void:
 	%VehicleSprite2D.texture = Utility.selected_vehicle.texture
 	self.add_child(Utility.operator_equipment)
 
+func _unhandled_input(_event: InputEvent) -> void:
+	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") or \
+	Utility.player2_selected == "Driver" and Input.is_action_just_pressed("left_p2"):
+		%VehicleSprite2D.flip_h = true
+	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("right_p1") or \
+	Utility.player2_selected == "Driver" and Input.is_action_just_pressed("right_p2"):
+		%VehicleSprite2D.flip_h = false
+
 func _physics_process(_delta: float) -> void:
 	if not Utility.paused:
 		var input_direction: Vector2

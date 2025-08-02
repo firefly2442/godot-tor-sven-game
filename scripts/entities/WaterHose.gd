@@ -6,7 +6,9 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	pass
+	if %RayCast2D.is_colliding():
+		var hit_pos: Vector2 = %RayCast2D.get_collision_point()
+		print_debug(hit_pos)
 
 func _process(_delta: float) -> void:
 	var hose_direction: Vector2 = Vector2.ZERO
@@ -24,5 +26,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		Utility.player2_selected == "Operator" and Input.is_action_just_pressed("action_p2"):
 		if $GPUParticles2D.emitting:
 			$GPUParticles2D.emitting = false
+			%RayCast2D.enabled = false
 		else:
 			$GPUParticles2D.emitting = true
+			%RayCast2D.enabled = true

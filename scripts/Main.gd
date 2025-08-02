@@ -2,6 +2,8 @@ extends Node
 
 
 func _ready() -> void:
+	randomize()
+	
 	var connected_pads: Array[int] = Input.get_connected_joypads()
 
 	# Setup input for Player 1 (Controller 0)

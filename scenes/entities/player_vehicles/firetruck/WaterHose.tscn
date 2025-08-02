@@ -28,6 +28,8 @@ process_material = SubResource("ParticleProcessMaterial_kk4k8")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 unique_name_in_owner = true
+enabled = false
+collision_mask = 2
 
 [node name="SplashContainer" type="Node2D" parent="."]
 unique_name_in_owner = true

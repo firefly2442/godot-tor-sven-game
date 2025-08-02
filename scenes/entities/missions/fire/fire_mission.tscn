@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhff7y7sbn8ga"]
+[gd_scene load_steps=15 format=3 uid="uid://bhff7y7sbn8ga"]
 
 [ext_resource type="Texture2D" uid="uid://dx8yn5pihagu0" path="res://scenes/entities/missions/fire/fire_02.png" id="1_oybr4"]
 [ext_resource type="Texture2D" uid="uid://dxy5dgheyinsk" path="res://scenes/entities/missions/fire/smoke_07.png" id="2_u6sdm"]
@@ -56,6 +56,8 @@ linear_accel_min = 100.0
 linear_accel_max = 200.0
 color_ramp = SubResource("GradientTexture1D_shvia")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6sdm"]
+
 [node name="FireMission" type="Node2D"]
 
 [node name="FireGPUParticles2D" type="GPUParticles2D" parent="."]
@@ -73,3 +75,10 @@ texture = ExtResource("2_u6sdm")
 lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_xw388")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_u6sdm")
