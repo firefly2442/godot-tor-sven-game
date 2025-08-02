@@ -8,14 +8,12 @@ func _ready() -> void:
 	# and debug the target_position which dictates the length
 	# of the raycast so it matches the length of the water spray
 	%RayCast2D.target_position = Vector2(0, 375)
-	connect("fire_out", Callable(get_parent(), "lostGame"))
+	connect("fire_out", Callable(MissionGenerator, "fireOut"))
 
 func _physics_process(_delta: float) -> void:
 	if %RayCast2D.is_colliding():
 		var collider: Node = %RayCast2D.get_collider()
-		print_debug(collider)
-		scene_a_instance.connect("fire_out", Callable(self, "_on_fire_out"))
-		
+		fire_out.emit(collider.get_instance_id())
 
 func _process(_delta: float) -> void:
 	var hose_direction: Vector2 = Vector2.ZERO

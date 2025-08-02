@@ -10,9 +10,12 @@ func _ready() -> void:
 	%PreventMovementTileMapLayer.z_index = -1 # don't show our red Xs that prevent movement
 	%Player1Role.text = Utility.player1_selected
 	%Player2Role.text = Utility.player2_selected
-	%MissionStatusLabel.text = "Pending"
+	MissionGenerator.clearMissions() # clear any potential past missions
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_p1") or event.is_action_pressed("escape_p2"):
 		# TODO: add pause UI screen
 		Utility.paused = true
+
+func _process(_delta: float) -> void:
+	%MissionStatusLabel.text = MissionGenerator.mission_type + " - " + str(MissionGenerator.number_active_missions)

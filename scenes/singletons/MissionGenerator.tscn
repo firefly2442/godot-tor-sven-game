@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhgq6yxn5pglg"]
 
-[ext_resource type="Script" uid="uid://0ks8seft4f6h" path="res://scripts/entities/MissionGenerator.gd" id="1_h00ha"]
+[ext_resource type="Script" uid="uid://0ks8seft4f6h" path="res://scripts/singletons/MissionGenerator.gd" id="1_h00ha"]
 
 [node name="MissionGenerator" type="Node2D"]
 script = ExtResource("1_h00ha")

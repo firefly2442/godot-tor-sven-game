@@ -14,7 +14,6 @@ config/name="godot-tor-sven-game"
 run/main_scene="uid://c236xljsj73rl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://3e4dj85fu5gt"
-config/windows_native_icon="res://icon.ico"
 
 [autoload]
 

@@ -90,7 +90,13 @@ shape = SubResource("RectangleShape2D_u6sdm")
 
 [node name="FireOutTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 2.0
+wait_time = 3.0
+one_shot = true
+
+[node name="SprayingWaterTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
 one_shot = true
 
 [connection signal="timeout" from="FireOutTimer" to="." method="_on_fire_out_timer_timeout"]
+[connection signal="timeout" from="SprayingWaterTimer" to="." method="_on_spraying_water_timer_timeout"]
