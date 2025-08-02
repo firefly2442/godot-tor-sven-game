@@ -15,8 +15,9 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_p1") or event.is_action_pressed("escape_p2"):
-		# TODO: add pause UI screen
 		Utility.paused = true
+		get_tree().paused = true
+		self.add_child(load("uid://x45urlgxnu8f").instantiate())
 
 func _process(_delta: float) -> void:
 	%MissionStatusLabel.text = MissionGenerator.mission_type + " - " + str(MissionGenerator.number_active_missions)

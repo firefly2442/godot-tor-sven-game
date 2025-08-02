@@ -39,7 +39,7 @@ func update_selection() -> void:
 
 func _on_item_selected(index: int) -> void:
 	if index == 0:
-			SceneSwitcher.switch_scene("uid://di0q3ok3ocsaj") # New Game
+		SceneSwitcher.switch_scene("uid://di0q3ok3ocsaj") # New Game
 	elif index == 1:
 		SceneSwitcher.switch_scene("uid://dq6ja7ouhyi51") # Controls
 	elif index == 2:
