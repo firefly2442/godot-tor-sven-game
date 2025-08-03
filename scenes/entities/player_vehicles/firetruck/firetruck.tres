@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=6 format=3 uid="uid://blmojbbdjr07"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=7 format=3 uid="uid://blmojbbdjr07"]
 
 [ext_resource type="AudioStream" uid="uid://bfm6lca8ickg5" path="res://sounds/vehicles/police_siren.ogg" id="1_kcbkc"]
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_nirs3"]
 [ext_resource type="Texture2D" uid="uid://bmyb6obpyxdmq" path="res://scenes/entities/player_vehicles/firetruck/firetruck.png" id="2_ocj4q"]
 [ext_resource type="AudioStream" uid="uid://bx4jjl10tlbkn" path="res://sounds/vehicles/engine_of_the_fire_truck.ogg" id="3_iqvcd"]
 [ext_resource type="AudioStream" uid="uid://cd7yhnb6wtvun" path="res://sounds/vehicles/truck-horn-double-short-length.ogg" id="4_vieva"]
+[ext_resource type="PackedScene" uid="uid://voobn11yad5i" path="res://scenes/entities/player_vehicles/firetruck/WaterHose.tscn" id="5_frl8o"]
 
 [resource]
 script = ExtResource("1_nirs3")
@@ -14,4 +15,5 @@ texture = ExtResource("2_ocj4q")
 vehicle_engine_sound = ExtResource("3_iqvcd")
 vehicle_horn_sound = ExtResource("4_vieva")
 operator_sound_back = ExtResource("1_kcbkc")
+vehicle_equipment = ExtResource("5_frl8o")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"

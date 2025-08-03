@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	%VehicleSprite2D.texture = Utility.selected_vehicle.texture
-	self.add_child(Utility.operator_equipment)
+	self.add_child(Utility.selected_vehicle.vehicle_equipment.instantiate())
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") or \
