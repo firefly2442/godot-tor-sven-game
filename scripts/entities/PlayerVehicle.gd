@@ -1,8 +1,17 @@
 extends CharacterBody2D
 
+@export var cycle_duration: float = 0.3  # time to go from red to blue and back
+var time_accum: float = 0.0
+
 func _ready() -> void:
 	%VehicleSprite2D.texture = Utility.selected_vehicle.texture
 	self.add_child(Utility.operator_equipment)
+	if Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.AMBULANCE or \
+	Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.FIRETRUCK or \
+	Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.POLICECAR:
+		%PointLight2D.enabled = true
+	else:
+		%PointLight2D.enabled = false
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") or \
@@ -31,5 +40,8 @@ func _physics_process(_delta: float) -> void:
 		# move_and_slide() automatically includes the timestep in its calculation, so you should not multiply the velocity vector by delta.
 		move_and_slide()
 
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	time_accum += delta
+	var t: float = (sin(time_accum * PI / cycle_duration) * 0.5) + 0.5  # oscillates 0..1
+	# interpolate between red and blue
+	%PointLight2D.color = Color8(255, 0, 0).lerp(Color8(0, 0, 255), t)
