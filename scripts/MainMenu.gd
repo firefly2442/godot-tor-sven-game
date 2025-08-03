@@ -4,8 +4,11 @@ extends Node2D
 @onready var menuitems: Array[Node] = %MenuContainer.get_children()
 var selected_index: int = 0
 var model_list: Array[String] = ["ambulance", "garbage-truck", "police", "tractor", "truck", "firetruck"]
+var move_cooldown: float = 0.3  # seconds between menu moves
+var time_until_next: float = 0.0
 
 func _ready() -> void:
+	self.time_until_next = 0.5
 	if get_tree().root.has_node("City"):
 		get_tree().root.get_node("City").queue_free()  # remove and clear if it exists
 	
@@ -21,19 +24,25 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	%GLBModel.rotate_y(deg_to_rad(rotation_speed * delta))
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("down_p1") or event.is_action_pressed("down_p2"):
-		selected_index = (selected_index + 1) % menuitems.size()
-		AudioManager.playUISwitch()
-		update_selection()
-	elif event.is_action_pressed("up_p1") or event.is_action_pressed("up_p2"):
-		selected_index = (selected_index - 1 + menuitems.size()) % menuitems.size()
-		AudioManager.playUISwitch()
-		update_selection()
-	elif event.is_action_pressed("action_p1") or event.is_action_pressed("action_p2"):
-		AudioManager.playUIClick()
-		_on_item_selected(selected_index)
+	
+	if time_until_next > 0.0:
+		time_until_next -= delta
+	
+	if time_until_next <= 0.0:
+		if Input.is_action_pressed("down_p1") or Input.is_action_pressed("down_p2"):
+			selected_index = (selected_index + 1) % menuitems.size()
+			AudioManager.playUISwitch()
+			update_selection()
+			time_until_next = move_cooldown
+		elif Input.is_action_pressed("up_p1") or Input.is_action_pressed("up_p2"):
+			selected_index = (selected_index - 1 + menuitems.size()) % menuitems.size()
+			AudioManager.playUISwitch()
+			update_selection()
+			time_until_next = move_cooldown
+		elif Input.is_action_pressed("action_p1") or Input.is_action_pressed("action_p2"):
+			AudioManager.playUIClick()
+			_on_item_selected(selected_index)
+			time_until_next = move_cooldown
 
 func update_selection() -> void:
 	for i in range(menuitems.size()):

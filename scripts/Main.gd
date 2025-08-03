@@ -52,11 +52,8 @@ func _add_controller_input(player_prefix: String, device_id: int) -> void:
 		}
 	}
 
-	for action_name: Array in actions.keys():
+	for action_name: String in actions.keys():
 		var input_action: String = "%s_%s" % [action_name, player_prefix]
-
-		# Clear old mappings to avoid duplicates
-		#InputMap.action_erase_events(input_action)
 
 		var config: Variant = actions[action_name]
 		
