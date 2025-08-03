@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5lqelcy8ffdx"]
+
+[ext_resource type="Script" uid="uid://1xaleks6drbn" path="res://scripts/entities/missions/rescue_mission.gd" id="1_cumfh"]
+
+[node name="RescueMission" type="Node2D"]
+script = ExtResource("1_cumfh")

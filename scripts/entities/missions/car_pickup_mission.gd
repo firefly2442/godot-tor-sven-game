@@ -6,6 +6,7 @@ var overlapping: bool = false ## if the player vehicle is overlapping with this 
 
 func _ready() -> void:
 	self.global_position = pick_random_spawn_position(get_tree().root.get_node("City").get_node("TileMapLayer_Level_1"))
+	self.z_index = 50 # make sure it's visible on top of our other items like the tilemap
 
 func _get_spawnable_cells(tile_map_layer: TileMapLayer) -> Array:
 	var cells: Array = []

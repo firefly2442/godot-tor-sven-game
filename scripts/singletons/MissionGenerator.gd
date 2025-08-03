@@ -1,11 +1,5 @@
 extends Node2D
 
-# the global positions range across the city for random mission generation
-var TOP_LEFT_X: int = -1022
-var TOP_LEFT_Y: int = -307
-var BOTTOM_RIGHT_X: int = 1645
-var BOTTOM_RIGHT_Y: int = 1337
-
 @export var max_missions: int = 6 ## maximum number of active missions at once
 var mission_type: String = "Pending"
 
@@ -25,25 +19,19 @@ func stopGeneratingMissions() -> void:
 func _on_timer_timeout() -> void:
 	if %Missions.get_child_count() < max_missions:
 		if Utility.selected_vehicle.vehicletype != null and Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.AMBULANCE:
-			# TODO: implement
-			pass
+			%Missions.add_child(load("uid://5lqelcy8ffdx").instantiate())
+			mission_type = "Rescue"
 		elif Utility.selected_vehicle.vehicletype != null and Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.FIRETRUCK:
-			var fire: Node = load("uid://bhff7y7sbn8ga").instantiate()
-			fire.global_position = Vector2i(randi_range(TOP_LEFT_X, BOTTOM_RIGHT_X), randi_range(TOP_LEFT_Y, BOTTOM_RIGHT_Y))
-			fire.z_index = 50 # make sure it's visible on top of our other items like the tilemap
-			%Missions.add_child(fire)
+			%Missions.add_child(load("uid://bhff7y7sbn8ga").instantiate())
 			mission_type = "Fire"
 		elif Utility.selected_vehicle.vehicletype != null and Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.POLICECAR:
-			# TODO: implement
-			pass
+			%Missions.add_child(load("uid://5lqelcy8ffdx").instantiate())
+			mission_type = "Rescue"
 		elif Utility.selected_vehicle.vehicletype != null and Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.SCHOOLBUS:
-			# TODO: implement
-			pass
+			%Missions.add_child(load("uid://c5d8y5gfpb7a0").instantiate())
+			mission_type = "Passenger Pickup"
 		elif Utility.selected_vehicle.vehicletype != null and Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.TOWTRUCK:
-			var car_pickup: Node = load("uid://bfxrg30dyb8cp").instantiate()
-			# TDOO: place car pickup on city map
-			car_pickup.z_index = 50 # make sure it's visible on top of our other items like the tilemap
-			%Missions.add_child(car_pickup)
+			%Missions.add_child(load("uid://bfxrg30dyb8cp").instantiate())
 			mission_type = "Car Pickup"
 		else:
 			mission_type = "Pending"

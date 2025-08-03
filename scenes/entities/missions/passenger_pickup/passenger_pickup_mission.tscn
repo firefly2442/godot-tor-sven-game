@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5d8y5gfpb7a0"]
+
+[ext_resource type="Script" uid="uid://btmacxbfagv7i" path="res://scripts/entities/missions/passenger_pickup_mission.gd" id="1_0f2ta"]
+
+[node name="PassengerPickupMission" type="Node2D"]
+script = ExtResource("1_0f2ta")
