@@ -24,7 +24,7 @@ from "Grounded" to "Floating".
 * Use `Debug -> Visible Collision Shapes` for debugging collisions and physics
 * Built and tested against Godot `4.4.1`
 
-## Youtube Channels
+## References and Links
 
 * [Godot Tutorials](https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg)
 * [GDQuest](https://www.youtube.com/c/Gdquest)
@@ -32,3 +32,4 @@ from "Grounded" to "Floating".
 * [WebTyler](https://wareya.github.io/webtyler/)
 * [Godot Tilemaps](https://www.youtube.com/watch?v=_SSInMAWd3g)
 * [Godot Tilemap Physics Tutorial](https://www.youtube.com/watch?v=19rY6kzt_Rs)
+* [Official Godot Demos Github](https://github.com/godotengine/godot-demo-projects)
