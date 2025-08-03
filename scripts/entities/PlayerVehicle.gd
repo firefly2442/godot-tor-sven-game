@@ -5,7 +5,8 @@ var time_accum: float = 0.0
 
 func _ready() -> void:
 	%VehicleSprite2D.texture = Utility.selected_vehicle.texture
-	self.add_child(Utility.operator_equipment)
+
+	self.add_child(Utility.selected_vehicle.vehicle_equipment.instantiate())
 	if Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.AMBULANCE or \
 	Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.FIRETRUCK or \
 	Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.POLICECAR:
@@ -13,6 +14,7 @@ func _ready() -> void:
 	else:
 		%PointLight2D.enabled = false
 
+	
 func _unhandled_input(_event: InputEvent) -> void:
 	if Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") or \
 	Utility.player2_selected == "Driver" and Input.is_action_just_pressed("left_p2"):

@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3n05vn8x4ls7"]
+
+[ext_resource type="Script" uid="uid://cnioocmai50j6" path="res://scripts/entities/RopeTow.gd" id="1_2ua7y"]
+[ext_resource type="Texture2D" uid="uid://dsugywyp55a7i" path="res://images/vehicles/sedan_blue.png" id="2_apkmh"]
+[ext_resource type="Texture2D" uid="uid://docckilkns32j" path="res://images/ui/godot.svg" id="2_kgi02"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ua7y"]
+radius = 1.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgi02"]
+size = Vector2(29, 11)
+
+[node name="RopeTow" type="Node2D"]
+script = ExtResource("1_2ua7y")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+unique_name_in_owner = true
+node_b = NodePath("../RigidBody2D2_1")
+
+[node name="RigidBody2D2_1" type="RigidBody2D" parent="."]
+position = Vector2(-13, 0)
+rotation = -1.5708
+collision_layer = 4
+collision_mask = 4
+mass = 0.1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2_1"]
+position = Vector2(-1.19209e-07, 2)
+shape = SubResource("CapsuleShape2D_2ua7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2_1"]
+modulate = Color(0, 0, 0, 0.501961)
+position = Vector2(0.199554, 2.47137)
+scale = Vector2(0.0168227, 0.157848)
+texture = ExtResource("2_kgi02")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(-21, 0)
+rotation = -1.5708
+node_a = NodePath("../RigidBody2D2_1")
+node_b = NodePath("../RigidBody2D_2")
+
+[node name="RigidBody2D_2" type="RigidBody2D" parent="."]
+position = Vector2(-33, 0)
+rotation = -1.5708
+collision_layer = 4
+collision_mask = 4
+mass = 0.1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D_2"]
+shape = SubResource("CapsuleShape2D_2ua7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D_2"]
+modulate = Color(0, 0, 0, 0.501961)
+position = Vector2(-2.01802e-08, 0.46167)
+rotation = 1.5708
+scale = Vector2(0.164661, 0.015625)
+texture = ExtResource("2_kgi02")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(-43, 0)
+rotation = -1.5708
+node_a = NodePath("../RigidBody2D_2")
+node_b = NodePath("../RigidBody2D_3")
+
+[node name="RigidBody2D_3" type="RigidBody2D" parent="."]
+position = Vector2(-55, 0)
+collision_layer = 4
+collision_mask = 4
+mass = 0.1
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D_3"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_2ua7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D_3"]
+modulate = Color(0, 0, 0, 0.501961)
+position = Vector2(0.46167, 0)
+scale = Vector2(0.164661, 0.015625)
+texture = ExtResource("2_kgi02")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(-65, 0)
+node_a = NodePath("../RigidBody2D_3")
+node_b = NodePath("../TowedCar")
+
+[node name="TowedCar" type="RigidBody2D" parent="."]
+position = Vector2(-71, 0)
+collision_layer = 4
+collision_mask = 5
+gravity_scale = 0.0
+
+[node name="TowedCarSprite2D" type="Sprite2D" parent="TowedCar"]
+position = Vector2(-11, 0)
+texture = ExtResource("2_apkmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowedCar"]
+position = Vector2(-10.5, -0.5)
+shape = SubResource("RectangleShape2D_kgi02")

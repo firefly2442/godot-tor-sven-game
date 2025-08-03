@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=6 format=3 uid="uid://beu2y01pvh78r"]
+[gd_resource type="Resource" script_class="vehicle_resource" load_steps=7 format=3 uid="uid://beu2y01pvh78r"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_3q68h"]
 [ext_resource type="AudioStream" uid="uid://b2fy60esl6g2m" path="res://sounds/vehicles/hot_bath_accent.ogg" id="1_tg3c1"]
 [ext_resource type="Texture2D" uid="uid://bi4jriyfvk3tf" path="res://scenes/entities/player_vehicles/towtruck/towtruck.png" id="2_p5uex"]
 [ext_resource type="AudioStream" uid="uid://cd7yhnb6wtvun" path="res://sounds/vehicles/truck-horn-double-short-length.ogg" id="3_4nd1b"]
 [ext_resource type="AudioStream" uid="uid://bx4jjl10tlbkn" path="res://sounds/vehicles/engine_of_the_fire_truck.ogg" id="3_acbrn"]
+[ext_resource type="PackedScene" uid="uid://c3n05vn8x4ls7" path="res://scenes/entities/player_vehicles/towtruck/rope_tow.tscn" id="5_v0tu3"]
 
 [resource]
 script = ExtResource("1_3q68h")
@@ -14,4 +15,5 @@ texture = ExtResource("2_p5uex")
 vehicle_engine_sound = ExtResource("3_acbrn")
 vehicle_horn_sound = ExtResource("3_4nd1b")
 operator_sound_back = ExtResource("1_tg3c1")
+vehicle_equipment = ExtResource("5_v0tu3")
 metadata/_custom_type_script = "uid://cfalb38rhymnv"
