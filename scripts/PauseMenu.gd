@@ -42,6 +42,7 @@ func _on_item_selected(index: int) -> void:
 	if index == 0:
 		Utility.paused = false
 		get_tree().paused = false
+		MissionGenerator.clearMissions()
 		self.queue_free()  # remove the menu
 	elif index == 1:
 		Utility.paused = false
