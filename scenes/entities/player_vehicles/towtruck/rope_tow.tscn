@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3n05vn8x4ls7"]
+[gd_scene load_steps=7 format=3 uid="uid://c3n05vn8x4ls7"]
 
 [ext_resource type="Script" uid="uid://cnioocmai50j6" path="res://scripts/entities/RopeTow.gd" id="1_2ua7y"]
 [ext_resource type="Texture2D" uid="uid://dsugywyp55a7i" path="res://images/vehicles/sedan_blue.png" id="2_apkmh"]
@@ -10,6 +10,9 @@ height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgi02"]
 size = Vector2(29, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hivj3"]
+size = Vector2(48, 39)
 
 [node name="RopeTow" type="Node2D"]
 script = ExtResource("1_2ua7y")
@@ -101,3 +104,12 @@ texture = ExtResource("2_apkmh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowedCar"]
 position = Vector2(-10.5, -0.5)
 shape = SubResource("RectangleShape2D_kgi02")
+
+[node name="CarPickupLocation" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarPickupLocation"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hivj3")

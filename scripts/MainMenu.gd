@@ -12,7 +12,6 @@ func _ready() -> void:
 	if get_tree().root.has_node("City"):
 		get_tree().root.get_node("City").queue_free()  # remove and clear if it exists
 	Utility.selected_vehicle = null
-	Utility.operator_equipment = null
 	
 	randomize()  # Ensures different results each run
 	var number: int = randi() % model_list.size()

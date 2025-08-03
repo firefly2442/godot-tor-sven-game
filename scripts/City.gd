@@ -21,4 +21,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		self.add_child(load("uid://x45urlgxnu8f").instantiate())
 
 func _process(_delta: float) -> void:
-	%MissionStatusLabel.text = MissionGenerator.mission_type + " - " + str(MissionGenerator.number_active_missions)
+	%MissionStatusLabel.text = MissionGenerator.mission_type + " - " + str(MissionGenerator.get_node("Missions").get_child_count())
