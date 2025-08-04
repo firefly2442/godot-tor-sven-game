@@ -8,6 +8,7 @@ func _ready() -> void:
 	playervehicle.global_position = Vector2(100, 100) # place the vehicle on the road
 	self.add_child(playervehicle)
 	%PreventMovementTileMapLayer.z_index = -1 # don't show our red Xs that prevent movement
+	%TileMapLayer_MissionSpawn.z_index = -1 # don't show our special mission spawn tiles
 	%Player1Role.text = Utility.player1_selected
 	%Player2Role.text = Utility.player2_selected
 	MissionGenerator.clearMissions() # clear any potential past missions

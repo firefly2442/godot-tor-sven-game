@@ -1,7 +1,5 @@
 extends Node2D
 
-var candidate_cells: Array = []
-
 var overlapping: bool = false ## if the player vehicle is overlapping with this car pickup
 
 func _ready() -> void:

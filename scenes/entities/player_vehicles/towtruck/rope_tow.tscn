@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3n05vn8x4ls7"]
+[gd_scene load_steps=7 format=3 uid="uid://bjy7fcp3q13b3"]
 
 [ext_resource type="Script" uid="uid://cnioocmai50j6" path="res://scripts/entities/RopeTow.gd" id="1_2ua7y"]
 [ext_resource type="Texture2D" uid="uid://dsugywyp55a7i" path="res://images/vehicles/sedan_blue.png" id="2_apkmh"]

@@ -1,6 +1,100 @@
-[gd_scene load_steps=2 format=3 uid="uid://5lqelcy8ffdx"]
+[gd_scene load_steps=16 format=3 uid="uid://5lqelcy8ffdx"]
 
 [ext_resource type="Script" uid="uid://1xaleks6drbn" path="res://scripts/entities/missions/rescue_mission.gd" id="1_cumfh"]
+[ext_resource type="Texture2D" uid="uid://4gqouhsbebve" path="res://images/characters/adventurer_fall.png" id="2_klcyg"]
+[ext_resource type="Texture2D" uid="uid://c71kqfgcoh6i2" path="res://images/characters/adventurer_cheer1.png" id="2_um5pf"]
+[ext_resource type="Texture2D" uid="uid://pxcx0oh461xk" path="res://images/characters/adventurer_hurt.png" id="3_6aoim"]
+[ext_resource type="Texture2D" uid="uid://di6fjqm6booe5" path="res://images/characters/adventurer_cheer2.png" id="3_h6ihh"]
+[ext_resource type="Texture2D" uid="uid://bw6duutqm26v5" path="res://images/characters/adventurer_idle.png" id="4_cqt71"]
+[ext_resource type="Texture2D" uid="uid://dajm0lmy08jax" path="res://images/characters/emote_faceSad.png" id="5_6aoim"]
+[ext_resource type="Texture2D" uid="uid://ckuy22235xo8v" path="res://images/characters/emote_exclamation.png" id="6_cqt71"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cumfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_um5pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h6ihh")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_klcyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6aoim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cqt71")
+}],
+"loop": true,
+"name": &"unhappy",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_cqt71"]
+_data = [Vector2(0.0240385, 0.0337079), 0.0, 0.0, 0, 0, Vector2(0.365385, 0.516854), 0.0, 0.0, 0, 0, Vector2(0.581731, 0.932584), 0.0, 0.0, 0, 0, Vector2(0.966346, 0.0674158), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_acjp0"]
+curve = SubResource("Curve_cqt71")
+
+[sub_resource type="Curve" id="Curve_acjp0"]
+_data = [Vector2(0.0192308, 0.235955), 0.0, 0.0, 0, 0, Vector2(0.350962, 0.494382), 0.0, 0.0, 0, 0, Vector2(0.947115, 0.011236), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_um5pf"]
+curve = SubResource("Curve_acjp0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_acjp0"]
+particle_flag_disable_z = true
+orbit_velocity_min = -0.5
+orbit_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 25.0
+linear_accel_max = 25.0
+scale_curve = SubResource("CurveTexture_um5pf")
+alpha_curve = SubResource("CurveTexture_acjp0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqt71"]
+size = Vector2(92, 90)
 
 [node name="RescueMission" type="Node2D"]
 script = ExtResource("1_cumfh")
+
+[node name="CharacterAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_cumfh")
+animation = &"unhappy"
+autoplay = "unhappy"
+frame_progress = 0.584321
+
+[node name="SpeechSprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-0.249996, -28.3281)
+scale = Vector2(0.828125, 0.828125)
+texture = ExtResource("5_6aoim")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+amount = 2
+texture = ExtResource("6_cqt71")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_acjp0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_cqt71")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
