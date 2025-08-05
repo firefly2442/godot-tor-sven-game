@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5lqelcy8ffdx"]
+[gd_scene load_steps=18 format=3 uid="uid://5lqelcy8ffdx"]
 
 [ext_resource type="Script" uid="uid://1xaleks6drbn" path="res://scripts/entities/missions/rescue_mission.gd" id="1_cumfh"]
 [ext_resource type="Texture2D" uid="uid://4gqouhsbebve" path="res://images/characters/adventurer_fall.png" id="2_klcyg"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bw6duutqm26v5" path="res://images/characters/adventurer_idle.png" id="4_cqt71"]
 [ext_resource type="Texture2D" uid="uid://dajm0lmy08jax" path="res://images/characters/emote_faceSad.png" id="5_6aoim"]
 [ext_resource type="Texture2D" uid="uid://ckuy22235xo8v" path="res://images/characters/emote_exclamation.png" id="6_cqt71"]
+[ext_resource type="Texture2D" uid="uid://mtn5ek4rto25" path="res://images/ui/keyboard_e.png" id="9_fowwm"]
+[ext_resource type="Texture2D" uid="uid://doc8iub0ug0w4" path="res://images/ui/keyboard_enter.png" id="10_14nbj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cumfh"]
 animations = [{
@@ -62,7 +64,7 @@ scale_curve = SubResource("CurveTexture_um5pf")
 alpha_curve = SubResource("CurveTexture_acjp0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqt71"]
-size = Vector2(92, 90)
+size = Vector2(223, 187)
 
 [node name="RescueMission" type="Node2D"]
 script = ExtResource("1_cumfh")
@@ -93,8 +95,50 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 3)
+position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_cqt71")
+
+[node name="RescueMissionContent" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+offset_left = -149.0
+offset_top = 23.0
+offset_right = 250.0
+offset_bottom = 214.0
+scale = Vector2(0.75, 0.75)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RescueMissionContent"]
+layout_mode = 2
+
+[node name="InstructionsLabel" type="Label" parent="RescueMissionContent/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Hit Action Button!"
+horizontal_alignment = 1
+
+[node name="Player1ProgressBar" type="ProgressBar" parent="RescueMissionContent/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Player2ProgressBar" type="ProgressBar" parent="RescueMissionContent/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RescueMissionContent/VBoxContainer"]
+layout_mode = 2
+
+[node name="Player1Button" type="TextureRect" parent="RescueMissionContent/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_fowwm")
+stretch_mode = 5
+
+[node name="Player2Button" type="TextureRect" parent="RescueMissionContent/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("10_14nbj")
+stretch_mode = 5
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]

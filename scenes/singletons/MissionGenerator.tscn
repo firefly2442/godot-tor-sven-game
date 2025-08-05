@@ -7,7 +7,6 @@ script = ExtResource("1_h00ha")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 15.0
 one_shot = true
 
 [node name="Missions" type="Node2D" parent="."]
