@@ -6,6 +6,7 @@ func _ready() -> void:
 	self.global_position = pick_random_spawn_position(get_tree().root.get_node("City").get_node("TileMapLayer_MissionSpawn"))
 	self.z_index = 50 # make sure it's visible on top of our other items like the tilemap
 	%RescueMissionContent.visible = false
+	%HeartsParticles.visible = false
 	
 	if Utility.player1_controls == "Keyboard":
 		%Player1Button.texture = load("uid://mtn5ek4rto25")
@@ -36,16 +37,34 @@ func pick_random_spawn_position(tile_map_layer: TileMapLayer) -> Vector2:
 
 func _on_area_entered(_area: Area2D) -> void:
 	overlapping = true
-	%RescueMissionContent.visible = true
-	print("Visible")
+	if self.get_node_or_null("RescueMissionContent"):
+		%RescueMissionContent.visible = true
 
 func _on_area_exited(_area: Area2D) -> void:
 	overlapping = false
-	%RescueMissionContent.visible = false
+	if self.get_node_or_null("RescueMissionContent"):
+		%RescueMissionContent.visible = false
 
-func checkRescuePickup() -> bool:
-	if overlapping:
-		self.queue_free() # this also removes it from the scene
-		return true
-	else:
-		return false
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("action_p1"):
+		%Player1ProgressBar.value += 10
+	if Input.is_action_just_pressed("action_p2"):
+		%Player2ProgressBar.value += 10
+
+func _on_progress_timer_timeout() -> void:
+	%Player1ProgressBar.value -= 4
+	%Player2ProgressBar.value -= 4
+
+func _process(_delta: float) -> void:
+	if %Player1ProgressBar.value == 100 and %Player1ProgressBar.value == 100:
+		%Area2D.set_process(false)
+		%Area2D.set_physics_process(false)
+		%RescueMissionContent.visible = false
+		%CharacterAnimatedSprite2D.play("happy")
+		%SpeechSprite2D.texture = load("uid://ps27i7xcqs2d")
+		%ExclamationParticles.visible = false
+		%HeartsParticles.visible = true
+		%FinishRescueTimer.start()
+
+func _on_finish_rescue_timer_timeout() -> void:
+	self.queue_free()

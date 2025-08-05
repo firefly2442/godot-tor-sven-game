@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://5lqelcy8ffdx"]
+[gd_scene load_steps=22 format=3 uid="uid://5lqelcy8ffdx"]
 
 [ext_resource type="Script" uid="uid://1xaleks6drbn" path="res://scripts/entities/missions/rescue_mission.gd" id="1_cumfh"]
 [ext_resource type="Texture2D" uid="uid://4gqouhsbebve" path="res://images/characters/adventurer_fall.png" id="2_klcyg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6duutqm26v5" path="res://images/characters/adventurer_idle.png" id="4_cqt71"]
 [ext_resource type="Texture2D" uid="uid://dajm0lmy08jax" path="res://images/characters/emote_faceSad.png" id="5_6aoim"]
 [ext_resource type="Texture2D" uid="uid://ckuy22235xo8v" path="res://images/characters/emote_exclamation.png" id="6_cqt71"]
+[ext_resource type="Texture2D" uid="uid://4mgtu2msfinm" path="res://images/particles/tileRed_48.png" id="9_14nbj"]
 [ext_resource type="Texture2D" uid="uid://mtn5ek4rto25" path="res://images/ui/keyboard_e.png" id="9_fowwm"]
 [ext_resource type="Texture2D" uid="uid://doc8iub0ug0w4" path="res://images/ui/keyboard_enter.png" id="10_14nbj"]
 
@@ -63,6 +64,21 @@ linear_accel_max = 25.0
 scale_curve = SubResource("CurveTexture_um5pf")
 alpha_curve = SubResource("CurveTexture_acjp0")
 
+[sub_resource type="Curve" id="Curve_lf87e"]
+_data = [Vector2(0, 0.0224719), 0.0, 0.0, 0, 0, Vector2(0.285, 0.191011), 0.0, 0.0, 0, 0, Vector2(0.975, 0.0674158), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ero3s"]
+curve = SubResource("Curve_lf87e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dldfo"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ero3s")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqt71"]
 size = Vector2(223, 187)
 
@@ -83,14 +99,21 @@ position = Vector2(-0.249996, -28.3281)
 scale = Vector2(0.828125, 0.828125)
 texture = ExtResource("5_6aoim")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="ExclamationParticles" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true
 amount = 2
 texture = ExtResource("6_cqt71")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_acjp0")
 
+[node name="HeartsParticles" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("9_14nbj")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_dldfo")
+
 [node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 16
 
@@ -112,7 +135,7 @@ layout_mode = 2
 [node name="InstructionsLabel" type="Label" parent="RescueMissionContent/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Hit Action Button!"
+text = "Mash Action Button!"
 horizontal_alignment = 1
 
 [node name="Player1ProgressBar" type="ProgressBar" parent="RescueMissionContent/VBoxContainer"]
@@ -140,5 +163,16 @@ size_flags_horizontal = 3
 texture = ExtResource("10_14nbj")
 stretch_mode = 5
 
+[node name="ProgressTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="FinishRescueTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 7.0
+one_shot = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
+[connection signal="timeout" from="ProgressTimer" to="." method="_on_progress_timer_timeout"]
+[connection signal="timeout" from="FinishRescueTimer" to="." method="_on_finish_rescue_timer_timeout"]
