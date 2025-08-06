@@ -7,4 +7,6 @@ var player2_controls: String = "Keyboard" ## player 2 controls, either Keyboard 
 
 var paused: bool = false ## boolean, whether or not the game is paused
 
+var in_city: bool = false ## whether or not we are in the city
+
 var selected_vehicle: vehicle_resource = preload("uid://blmojbbdjr07").duplicate() ## the selected vehicle resource

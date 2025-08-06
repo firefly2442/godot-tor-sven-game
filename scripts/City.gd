@@ -14,6 +14,7 @@ func _ready() -> void:
 	MissionGenerator.clearMissions() # clear any potential past missions
 	MissionGenerator.startGeneratingMissions() # start generating missions
 	AudioManager.playBackgroundEnvironmental()
+	Utility.in_city = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape_p1") or event.is_action_pressed("escape_p2"):

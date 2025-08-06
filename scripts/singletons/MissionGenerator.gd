@@ -17,7 +17,7 @@ func stopGeneratingMissions() -> void:
 	%Timer.stop()
 
 func _on_timer_timeout() -> void:
-	if %Missions.get_child_count() < max_missions:
+	if %Missions.get_child_count() < max_missions and Utility.selected_vehicle != null and Utility.in_city:
 		if Utility.selected_vehicle.vehicletype != null and Utility.selected_vehicle.vehicletype == vehicle_resource.vehicle_type.AMBULANCE:
 			%Missions.add_child(load("uid://5lqelcy8ffdx").instantiate())
 			mission_type = "Rescue"

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bi4jriyfvk3tf" path="res://scenes/entities/player_vehicles/towtruck/towtruck.png" id="2_p5uex"]
 [ext_resource type="AudioStream" uid="uid://cd7yhnb6wtvun" path="res://sounds/vehicles/truck-horn-double-short-length.ogg" id="3_4nd1b"]
 [ext_resource type="AudioStream" uid="uid://bx4jjl10tlbkn" path="res://sounds/vehicles/engine_of_the_fire_truck.ogg" id="3_acbrn"]
-[ext_resource type="PackedScene" uid="uid://c3n05vn8x4ls7" path="res://scenes/entities/player_vehicles/towtruck/rope_tow.tscn" id="5_v0tu3"]
+[ext_resource type="PackedScene" uid="uid://bjy7fcp3q13b3" path="res://scenes/entities/player_vehicles/towtruck/rope_tow.tscn" id="5_v0tu3"]
 
 [resource]
 script = ExtResource("1_3q68h")

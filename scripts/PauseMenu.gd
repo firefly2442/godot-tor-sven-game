@@ -42,10 +42,12 @@ func _on_item_selected(index: int) -> void:
 	if index == 0:
 		Utility.paused = false
 		get_tree().paused = false
-		MissionGenerator.clearMissions()
 		self.queue_free()  # remove the menu
+		# back to the city
 	elif index == 1:
 		Utility.paused = false
 		get_tree().paused = false
 		AudioManager.playBackgroundMusic()
+		MissionGenerator.clearMissions()
+		Utility.in_city = false
 		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
