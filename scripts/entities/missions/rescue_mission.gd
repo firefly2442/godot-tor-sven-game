@@ -37,13 +37,15 @@ func pick_random_spawn_position(tile_map_layer: TileMapLayer) -> Vector2:
 
 func _on_area_entered(_area: Area2D) -> void:
 	overlapping = true
-	if self.get_node_or_null("RescueMissionContent"):
-		%RescueMissionContent.visible = true
+	var rescue_node := self.get_node_or_null("RescueMissionContent")
+	if rescue_node:
+		rescue_node.visible = true
 
 func _on_area_exited(_area: Area2D) -> void:
 	overlapping = false
-	if self.get_node_or_null("RescueMissionContent"):
-		%RescueMissionContent.visible = false
+	var rescue_node := self.get_node_or_null("RescueMissionContent")
+	if rescue_node:
+		rescue_node.visible = false
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("action_p1"):
@@ -56,7 +58,7 @@ func _on_progress_timer_timeout() -> void:
 	%Player2ProgressBar.value -= 4
 
 func _process(_delta: float) -> void:
-	if %Player1ProgressBar.value == 100 and %Player1ProgressBar.value == 100:
+	if %Player1ProgressBar.value == 100 and %Player1ProgressBar.value == 100 and overlapping:
 		%Area2D.set_process(false)
 		%Area2D.set_physics_process(false)
 		%RescueMissionContent.visible = false
