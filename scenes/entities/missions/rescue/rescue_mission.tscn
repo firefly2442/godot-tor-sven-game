@@ -44,14 +44,14 @@ animations = [{
 _data = [Vector2(0.0240385, 0.0337079), 0.0, 0.0, 0, 0, Vector2(0.365385, 0.516854), 0.0, 0.0, 0, 0, Vector2(0.581731, 0.932584), 0.0, 0.0, 0, 0, Vector2(0.966346, 0.0674158), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_acjp0"]
+[sub_resource type="CurveTexture" id="CurveTexture_14nbj"]
 curve = SubResource("Curve_cqt71")
 
 [sub_resource type="Curve" id="Curve_acjp0"]
 _data = [Vector2(0.0192308, 0.235955), 0.0, 0.0, 0, 0, Vector2(0.350962, 0.494382), 0.0, 0.0, 0, 0, Vector2(0.947115, 0.011236), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_um5pf"]
+[sub_resource type="CurveTexture" id="CurveTexture_lf87e"]
 curve = SubResource("Curve_acjp0")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_acjp0"]
@@ -61,8 +61,8 @@ orbit_velocity_max = 0.5
 gravity = Vector3(0, 0, 0)
 linear_accel_min = 25.0
 linear_accel_max = 25.0
-scale_curve = SubResource("CurveTexture_um5pf")
-alpha_curve = SubResource("CurveTexture_acjp0")
+scale_curve = SubResource("CurveTexture_lf87e")
+alpha_curve = SubResource("CurveTexture_14nbj")
 
 [sub_resource type="Curve" id="Curve_lf87e"]
 _data = [Vector2(0, 0.0224719), 0.0, 0.0, 0, 0, Vector2(0.285, 0.191011), 0.0, 0.0, 0, 0, Vector2(0.975, 0.0674158), 0.0, 0.0, 0, 0]
