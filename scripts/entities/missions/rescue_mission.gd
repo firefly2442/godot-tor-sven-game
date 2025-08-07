@@ -48,9 +48,11 @@ func _on_area_exited(_area: Area2D) -> void:
 		rescue_node.visible = false
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("action_p1"):
+	if Input.is_action_just_pressed("action_p1") and overlapping:
+		AudioManager.playUIClick()
 		%Player1ProgressBar.value += 10
-	if Input.is_action_just_pressed("action_p2"):
+	if Input.is_action_just_pressed("action_p2") and overlapping:
+		AudioManager.playUIClick()
 		%Player2ProgressBar.value += 10
 
 func _on_progress_timer_timeout() -> void:

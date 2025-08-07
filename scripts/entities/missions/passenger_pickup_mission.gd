@@ -1,8 +1,8 @@
 extends Node2D
 
 var overlapping: bool = false ## if the player vehicle is overlapping with this
-var p1_agrees: bool = false
-var p2_agrees: bool = false
+var p1_agrees: bool = false ## if player 1 has agreed the colors are the same
+var p2_agrees: bool = false ## if player 2 has agreed the colors are the same
 var finished: bool = false ## whether or not the mission is finished
 
 var common_colors: Array = [
@@ -51,12 +51,14 @@ func _on_area_exited(_area: Area2D) -> void:
 			timer.stop()
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("action_p1"):
+	if Input.is_action_just_pressed("action_p1") and overlapping:
 		p1_agrees = true
-	if Input.is_action_just_pressed("action_p2"):
+		AudioManager.playUIClick()
+	if Input.is_action_just_pressed("action_p2") and overlapping:
 		p2_agrees = true
+		AudioManager.playUIClick()
 	
-	if %Color1.modulate == %Color2.modulate and p1_agrees and p2_agrees:
+	if %Color1.modulate == %Color2.modulate and p1_agrees and p2_agrees and overlapping:
 		finished = true
 		%Area2D.set_process(false)
 		%Area2D.set_physics_process(false)

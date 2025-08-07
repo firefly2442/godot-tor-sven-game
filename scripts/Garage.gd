@@ -36,19 +36,15 @@ func _ready() -> void:
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("action_p1"):
 		player1_ready = true
-		%Player1ReadyLabel.modulate = Color.GREEN
 		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("action_p2"):
 		player2_ready = true
-		%Player2ReadyLabel.modulate = Color.GREEN
 		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("back_p1"):
 		player1_ready = false
-		%Player1ReadyLabel.modulate = Color.WHITE
 		AudioManager.playUIClick()
 	if Input.is_action_just_pressed("back_p2"):
 		player2_ready = false
-		%Player2ReadyLabel.modulate = Color.WHITE
 		AudioManager.playUIClick()
 	
 	if Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
@@ -73,11 +69,15 @@ func _process(delta: float) -> void:
 			selected_vehicle_index = selected_vehicle_index + 1
 			AudioManager.playUISwitch()
 			time_until_next = move_cooldown
+			player1_ready = false
+			player2_ready = false
 		if (Utility.player2_selected == "Driver" and Input.is_action_just_pressed("left_p2") and selected_vehicle_index != 0) or \
 		(Utility.player1_selected == "Driver" and Input.is_action_just_pressed("left_p1") and selected_vehicle_index != 0):
 			selected_vehicle_index = selected_vehicle_index - 1
 			AudioManager.playUISwitch()
 			time_until_next = move_cooldown
+			player1_ready = false
+			player2_ready = false
 	
 	# grey out the left and right vehicle selection icons if we are at the beginning or end
 	if selected_vehicle_index == 0:
@@ -93,3 +93,12 @@ func _process(delta: float) -> void:
 	else:
 		%RightTextureRect.modulate = Color(1,1,1,1)
 		%RightTextureImage.modulate = Color(1,1,1,1)
+
+	if player1_ready:
+		%Player1ReadyLabel.modulate = Color.GREEN
+	else:
+		%Player1ReadyLabel.modulate = Color.WHITE
+	if player2_ready:
+		%Player2ReadyLabel.modulate = Color.GREEN
+	else:
+		%Player2ReadyLabel.modulate = Color.WHITE
