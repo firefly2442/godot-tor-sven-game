@@ -14,6 +14,8 @@ func _ready() -> void:
 	Utility.selected_vehicle = null
 	MissionGenerator.clearMissions()
 	
+	AudioManager.playGeneric()
+	
 	randomize()  # Ensures different results each run
 	var number: int = randi() % model_list.size()
 	

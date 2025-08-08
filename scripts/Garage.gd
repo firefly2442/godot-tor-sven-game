@@ -18,6 +18,8 @@ var time_until_next: float = 0.0
 func _ready() -> void:
 	self.time_until_next = 0.5
 	
+	AudioManager.playGeneric()
+	
 	if (Utility.player1_selected == "Driver" and Utility.player1_controls == "Controller") or \
 	(Utility.player2_selected == "Driver" and Utility.player2_controls == "Controller"):
 		%LeftTextureRect.texture = load("uid://bejopfhmvqjma")

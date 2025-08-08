@@ -61,6 +61,7 @@ func _on_progress_timer_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	if %Player1ProgressBar.value == 100 and %Player1ProgressBar.value == 100 and overlapping:
+		AudioManager.playSuccess()
 		%Area2D.set_process(false)
 		%Area2D.set_physics_process(false)
 		%RescueMissionContent.visible = false

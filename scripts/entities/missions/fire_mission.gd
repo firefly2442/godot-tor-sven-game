@@ -21,6 +21,7 @@ func fireOut(staticbody2d_id: int) -> bool:
 		# the fire goes out immediately after the ray intersection
 		%SprayingWaterTimer.start()
 		if not marked_removal:
+			AudioManager.playSuccess()
 			marked_removal = true
 			return true
 		else:

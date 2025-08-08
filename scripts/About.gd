@@ -4,7 +4,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	pass
+	AudioManager.playGeneric()
 
 func _process(delta: float) -> void:
 	var scroll: ScrollContainer = %ScrollContainer

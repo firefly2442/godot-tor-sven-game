@@ -60,6 +60,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 	if %Color1.modulate == %Color2.modulate and p1_agrees and p2_agrees and overlapping:
 		finished = true
+		AudioManager.playSuccess()
 		%Area2D.set_process(false)
 		%Area2D.set_physics_process(false)
 		%PickupMissionContent.visible = false

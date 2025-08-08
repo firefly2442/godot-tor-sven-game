@@ -6,6 +6,8 @@ func _ready() -> void:
 		%Player2ControllerHBoxContainer.visible = false
 	elif Input.get_connected_joypads().size() == 1:
 		%Player2ControllerHBoxContainer.visible = false
+	
+	AudioManager.playGeneric()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("action_p1") or Input.is_action_just_pressed("action_p2") or \

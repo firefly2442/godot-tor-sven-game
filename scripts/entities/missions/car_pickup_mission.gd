@@ -34,6 +34,7 @@ func _on_area_exited(_area: Area2D) -> void:
 func checkCarPickup() -> bool:
 	if overlapping:
 		self.queue_free() # this also removes it from the scene
+		AudioManager.playSuccess()
 		return true
 	else:
 		return false
