@@ -33,3 +33,7 @@ from "Grounded" to "Floating".
 * [Godot Tilemaps](https://www.youtube.com/watch?v=_SSInMAWd3g)
 * [Godot Tilemap Physics Tutorial](https://www.youtube.com/watch?v=19rY6kzt_Rs)
 * [Official Godot Demos Github](https://github.com/godotengine/godot-demo-projects)
+* [Godot Autobattle Tutorial](https://www.youtube.com/playlist?list=PL6SABXRSlpH_0UEV3gJ53I7a2eGL8pqs3)
+* [Godot Autobattle Github](https://github.com/guladam/godot_autobattler_course)
+* [Godot Card Game Tutorial](https://www.youtube.com/watch?v=ulgh_neTJG8&list=PL6SABXRSlpH8CD71L7zye311cp9R4JazJ)
+* [Godot Card Game Github](https://github.com/guladam/deck_builder_tutorial/tree/season-1-starter-project)
