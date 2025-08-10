@@ -18,8 +18,8 @@ jobs:
         release_json=$(curl -s https://api.github.com/repos/godotengine/godot/releases/latest)
 
         tag=$(echo "$release_json" | jq -r '.tag_name')
-        linux_url=$(echo "$release_json" | jq -r '.assets[] | select(.name | test("linux.*x86_64.zip$")) | .browser_download_url')
-        templates_url=$(echo "$release_json" | jq -r '.assets[] | select(.name | test("export_templates.tpz$")) | .browser_download_url')
+        linux_url=$(echo "$release_json" | jq -r '.assets[] | select(.name | test("stable_linux.x86_32.zip$")) | .browser_download_url')
+        templates_url=$(echo "$release_json" | jq -r '.assets[] | select(.name | test("stable_export_templates.tpz$")) | .browser_download_url')
 
         echo "tag=$tag" >> $GITHUB_OUTPUT
         echo "linux_url=$linux_url" >> $GITHUB_OUTPUT
