@@ -1,0 +1,46 @@
+name: CI/CD - Godot Export
+
+on:
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Grab latest Godot release info
+      id: release
+      run: |
+        resp=$(curl -s https://api.github.com/repos/godotengine/godot/releases/latest)
+        echo "tag=$(echo "$resp" | jq -r '.tag_name')" >> $GITHUB_OUTPUT
+        # Identify Linux and Windows editor assets
+        LIN=$(echo "$resp" | jq -r '.assets[] | select(.name|test("linux.*tools.*64")) | .browser_download_url')
+        WIN=$(echo "$resp" | jq -r '.assets[] | select(.name|test("windows.*tools.*64")) | .browser_download_url')
+        echo "linux_url=$LIN" >> $GITHUB_OUTPUT
+        echo "windows_url=$WIN" >> $GITHUB_OUTPUT
+
+    - name: Download Linux Editor
+      run: |
+        curl -L "${{ steps.release.outputs.linux_url }}" -o godot-linux.tar.xz
+        tar -xJf godot-linux.tar.xz
+
+    - name: Download Windows Editor
+      run: |
+        curl -L "${{ steps.release.outputs.windows_url }}" -o godot-windows.zip
+        unzip godot-windows.zip
+
+    - name: Export Linux build
+      run: |
+        chmod +x Godot_v*-stable_linux.*.64
+        ./Godot_v*-stable_linux.*.64 --headless --export-release "Linux/X11" build/tor_sven_game.x86_64
+
+    - name: Export Windows build
+      run: |
+        chmod +x Godot_v*-stable_windows.*.64.exe
+        ./Godot_v*-stable_windows.*.64.exe --headless --export-release "Windows Desktop" build/tor_sven_game.exe
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: builds
+        path: build/
