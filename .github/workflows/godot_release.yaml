@@ -33,8 +33,10 @@ jobs:
 
     - name: Download and Install Export Templates
       run: |
-        mkdir -p ~/.local/share/godot/templates/${{ steps.release.outputs.tag }}
+        version_folder=$(echo "${{ steps.release.outputs.tag }}" | sed 's/-/./')
+        mkdir -p ~/.local/share/godot/export_templates/$version_folder
         curl -L "${{ steps.release.outputs.templates_url }}" -o templates.tpz
+        tar -xf templates.tpz -C ~/.local/share/godot/export_templates/$version_folder
         
     - name: Export Linux build
       run: |
