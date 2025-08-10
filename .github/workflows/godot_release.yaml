@@ -40,7 +40,7 @@ jobs:
         chmod +x Godot_v*-stable_windows.*.64.exe
         ./Godot_v*-stable_windows.*.64.exe --headless --export-release "Windows Desktop" build/tor_sven_game.exe
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: builds
         path: build/
