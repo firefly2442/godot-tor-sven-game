@@ -9,36 +9,40 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Grab latest Godot release info
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y jq unzip tar
+
+    - name: Get latest Godot release info
       id: release
       run: |
-        resp=$(curl -s https://api.github.com/repos/godotengine/godot/releases/latest)
-        echo "tag=$(echo "$resp" | jq -r '.tag_name')" >> $GITHUB_OUTPUT
-        # Identify Linux and Windows editor assets
-        LIN=$(echo "$resp" | jq -r '.assets[] | select(.name|test("linux.*tools.*64")) | .browser_download_url')
-        WIN=$(echo "$resp" | jq -r '.assets[] | select(.name|test("windows.*tools.*64")) | .browser_download_url')
-        echo "linux_url=$LIN" >> $GITHUB_OUTPUT
-        echo "windows_url=$WIN" >> $GITHUB_OUTPUT
+        release_json=$(curl -s https://api.github.com/repos/godotengine/godot/releases/latest)
 
-    - name: Download Linux Editor
+        tag=$(echo "$release_json" | jq -r '.tag_name')
+        linux_url=$(echo "$release_json" | jq -r '.assets[] | select(.name | test("linux.*x86_64.zip$")) | .browser_download_url')
+        templates_url=$(echo "$release_json" | jq -r '.assets[] | select(.name | test("export_templates.tpz$")) | .browser_download_url')
+
+        echo "tag=$tag" >> $GITHUB_OUTPUT
+        echo "linux_url=$linux_url" >> $GITHUB_OUTPUT
+        echo "templates_url=$templates_url" >> $GITHUB_OUTPUT
+
+    - name: Download Godot Linux Editor
       run: |
-        curl -L "${{ steps.release.outputs.linux_url }}" -o godot-linux.tar.xz
-        tar -xJf godot-linux.tar.xz
+        curl -L "${{ steps.release.outputs.linux_url }}" -o godot-linux.zip
+        unzip godot-linux.zip -d godot-bin
+        chmod +x godot-bin/Godot*
 
-    - name: Download Windows Editor
+    - name: Download and Install Export Templates
       run: |
-        curl -L "${{ steps.release.outputs.windows_url }}" -o godot-windows.zip
-        unzip godot-windows.zip
-
+        mkdir -p ~/.local/share/godot/templates/${{ steps.release.outputs.tag }}
+        curl -L "${{ steps.release.outputs.templates_url }}" -o templates.tpz
+        
     - name: Export Linux build
       run: |
-        chmod +x Godot_v*-stable_linux.*.64
-        ./Godot_v*-stable_linux.*.64 --headless --export-release "Linux/X11" build/tor_sven_game.x86_64
+        ./godot-bin/Godot* --headless --export-release "Linux/X11" build/tor_sven_game.x86_64
 
     - name: Export Windows build
       run: |
-        chmod +x Godot_v*-stable_windows.*.64.exe
-        ./Godot_v*-stable_windows.*.64.exe --headless --export-release "Windows Desktop" build/tor_sven_game.exe
+        ./godot-bin/Godot* --headless --export-release "Windows Desktop" build/tor_sven_game.exe
 
     - uses: actions/upload-artifact@v4
       with:
