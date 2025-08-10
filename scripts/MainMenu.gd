@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 	if time_until_next > 0.0:
 		time_until_next -= delta
 	
+	%PathFollow2D.progress_ratio += delta * 0.5
+	
 	if time_until_next <= 0.0:
 		if Input.is_action_pressed("down_p1") or Input.is_action_pressed("down_p2"):
 			selected_index = (selected_index + 1) % menuitems.size()

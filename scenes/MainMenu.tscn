@@ -1,6 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://bky45hik6v0r0"]
+[gd_scene load_steps=9 format=3 uid="uid://bky45hik6v0r0"]
 
 [ext_resource type="Script" uid="uid://cdmmlbpahmy8p" path="res://scripts/MainMenu.gd" id="1_ux756"]
+[ext_resource type="Texture2D" uid="uid://bs0vurh40mh0f" path="res://images/particles/star_07.png" id="2_0ykhv"]
+
+[sub_resource type="Curve2D" id="Curve2D_yqorp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 15, 80, 0, 0, 0, 0, 693, 75, 0, 0, 0, 0, 692, 90, 0, 0, 0, 0, 15, 92, 0, 0, 0, 0, 15, 80)
+}
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_2wh52"]
+offsets = PackedFloat32Array(0, 0.0827887, 0.174292, 0.281046, 0.379085, 0.481481, 0.575163, 0.684096, 0.803922, 0.897604, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.946088, 0, 0.324716, 1, 0.682839, 0.395616, 0.186444, 1, 0.965575, 0.912086, 0.410803, 1, 0.373057, 0.846688, 0.324385, 1, 0.249899, 0.679663, 0.289805, 1, 0.0364192, 0.777689, 0.844049, 1, 0.54612, 0.818206, 0.994667, 1, 0.494645, 0.310477, 0.952143, 1, 0.730864, 0.174031, 0.797603, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ow34m"]
+gradient = SubResource("Gradient_2wh52")
+
+[sub_resource type="Curve" id="Curve_0ykhv"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0.0301811, 0.851419), 0.0, 0.0, 0, 0, Vector2(0.402414, 2.15359), 0.0, 0.0, 0, 0, Vector2(1, 0.0143099), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2wh52"]
+curve = SubResource("Curve_0ykhv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ykhv"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.15
+scale_max = 0.15
+scale_over_velocity_curve = SubResource("CurveTexture_2wh52")
+color_ramp = SubResource("GradientTexture1D_ow34m")
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_ux756")
@@ -21,6 +52,19 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "The Tor and Sven Game!"
+
+[node name="Path2D" type="Path2D" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+curve = SubResource("Curve2D_yqorp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MarginContainer/HBoxContainer/VBoxContainer/Path2D"]
+unique_name_in_owner = true
+position = Vector2(15, 80)
+rotation = -0.0073745
+rotates = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="MarginContainer/HBoxContainer/VBoxContainer/Path2D/PathFollow2D"]
+texture = ExtResource("2_0ykhv")
+process_material = SubResource("ParticleProcessMaterial_0ykhv")
 
 [node name="MenuContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
