@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # Manual trigger
 
 jobs:
-  export:
+  export-release:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -38,7 +38,7 @@ jobs:
         
     - name: Export Linux build
       run: |
-        ./godot-bin/Godot* --headless --export-release "Linux/X11" build/tor_sven_game.x86_64
+        ./godot-bin/Godot* --headless --export-release "Linux" build/tor_sven_game.x86_64
 
     - name: Export Windows build
       run: |
