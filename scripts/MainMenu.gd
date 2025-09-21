@@ -3,6 +3,7 @@ extends Node2D
 @export var rotation_speed: float = 30.0  # Degrees per second
 @onready var menuitems: Array[Node] = %MenuContainer.get_children()
 var selected_index: int = 0
+# TODO: convert this to UIDs
 var model_list: Array[String] = ["ambulance", "garbage-truck", "police", "tractor", "truck", "firetruck"]
 var move_cooldown: float = 0.3  # seconds between menu moves
 var time_until_next: float = 0.0
@@ -17,9 +18,8 @@ func _ready() -> void:
 	AudioManager.playGeneric()
 	
 	randomize()  # Ensures different results each run
-	var number: int = randi() % model_list.size()
 	
-	var glb_resource: PackedScene = load("res://models/"+model_list[number]+".glb")
+	var glb_resource: PackedScene = load("res://models/"+model_list.pick_random()+".glb")
 	if glb_resource is PackedScene:
 		var glb_instance: Node = glb_resource.instantiate()
 		%GLBModel.add_child(glb_instance)
