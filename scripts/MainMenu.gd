@@ -3,8 +3,14 @@ extends Node2D
 @export var rotation_speed: float = 30.0  # Degrees per second
 @onready var menuitems: Array[Node] = %MenuContainer.get_children()
 var selected_index: int = 0
-# TODO: convert this to UIDs
-var model_list: Array[String] = ["ambulance", "garbage-truck", "police", "tractor", "truck", "firetruck"]
+var model_list: Array[String] = [
+	UID.VEHICLE_MODELS.AMBULANCE,
+	UID.VEHICLE_MODELS.FIRETRUCK,
+	UID.VEHICLE_MODELS.GARBAGE_TRUCK,
+	UID.VEHICLE_MODELS.POLICECAR,
+	UID.VEHICLE_MODELS.TRACTOR,
+	UID.VEHICLE_MODELS.TRUCK,
+]
 var move_cooldown: float = 0.3  # seconds between menu moves
 var time_until_next: float = 0.0
 
@@ -19,7 +25,7 @@ func _ready() -> void:
 	
 	randomize()  # Ensures different results each run
 	
-	var glb_resource: PackedScene = load("res://models/"+model_list.pick_random()+".glb")
+	var glb_resource: PackedScene = load(model_list.pick_random())
 	if glb_resource is PackedScene:
 		var glb_instance: Node = glb_resource.instantiate()
 		%GLBModel.add_child(glb_instance)

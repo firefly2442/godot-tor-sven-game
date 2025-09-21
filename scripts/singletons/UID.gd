@@ -18,3 +18,12 @@ const VEHICLES: Dictionary = {
 	"SCHOOLBUS": "uid://b6f435xspe71g",
 	"TOWTRUCK": "uid://beu2y01pvh78r",
 }
+
+const VEHICLE_MODELS: Dictionary = {
+	"AMBULANCE": "uid://dry5if62nhr6q",
+	"FIRETRUCK": "uid://du5ywa17002cw",
+	"GARBAGE_TRUCK": "uid://bjvm4q52l4vnh",
+	"POLICECAR": "uid://b0fr1gr23ojk0",
+	"TRACTOR": "uid://c34r18fceouku",
+	"TRUCK": "uid://5ymtkn4kpbsp",
+}
