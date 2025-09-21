@@ -12,6 +12,12 @@ var background_music: AudioStreamPlayer = AudioStreamPlayer.new()
 var backgroundvolume: int = -10
 var effectsvolume: int = 0
 
+var background_list: Array = [
+	"uid://corfcbmyxa761",
+	"uid://drqxqcs0df8g8",
+	"uid://cq211gb05k66l",
+]
+
 # https://kidscancode.org/godot_recipes/3.x/audio/audio_manager/
 
 func _ready() -> void:
@@ -42,7 +48,7 @@ func _on_stream_finished(player: AudioStreamPlayer) -> void:
 	available.append(player)
 
 func playBackgroundMusic() -> void:
-	background_music.stream = load("uid://corfcbmyxa761")
+	background_music.stream = load(background_list.pick_random())
 	background_music.bus = "background"
 	background_music.play()
 
@@ -88,6 +94,9 @@ func _process(_delta: float) -> void:
 		player.play()
 		player_to_sound[player] = sound_path
 		# already marked active when queued
+	
+	if not background_music.playing:
+		self.playBackgroundMusic()
 
 func playUISwitch() -> void:
 	self.play("uid://bful7jl81wf4a")

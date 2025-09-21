@@ -48,3 +48,11 @@ File: kids_laugh_short.ogg (converted from wav)
 https://freesound.org/people/metrostock99/sounds/514703/
 License: Creative Commons
 File: hot_bath_accent.ogg (converted from wav, slightly shortened)
+
+https://freesound.org/people/cheesepuff/sounds/112071/
+License: Creative Commons
+File: piano_remix.ogg (converted from mp3)
+
+https://freesound.org/people/uEffects/sounds/327575/
+License: Creative Commons
+File: guitar_background.ogg (converted from wav)
