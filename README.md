@@ -23,6 +23,7 @@ from "Grounded" to "Floating".
 * Keyboard and controller supported
 * Use `Debug -> Visible Collision Shapes` for debugging collisions and physics
 * Built and tested against Godot `4.5`
+* [Godot CI](https://github.com/abarichello/godot-ci) used for Github automated builds
 
 ## References and Links
 
