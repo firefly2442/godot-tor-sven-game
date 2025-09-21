@@ -17,6 +17,7 @@ config/icon="uid://3e4dj85fu5gt"
 
 [autoload]
 
+UID="*res://scripts/singletons/UID.gd"
 SceneSwitcher="*res://scripts/singletons/SceneSwitcher.gd"
 AudioManager="*res://scripts/singletons/AudioManager.gd"
 Utility="*res://scripts/singletons/Utility.gd"
@@ -33,6 +34,14 @@ window/size/viewport_height=1080
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://images/": "green",
+"res://scenes/": "blue",
+"res://scripts/": "red"
+}
 
 [input]
 

@@ -1,11 +1,11 @@
 extends Node2D
 
 var available_vehicles: Array[String] = [
-	"uid://dhgr0cdhk6bwe",
-	"uid://blmojbbdjr07",
-	"uid://ccnrt1tmmm6dj",
-	"uid://b6f435xspe71g",
-	"uid://beu2y01pvh78r"
+	UID.VEHICLES.AMBULANCE,
+	UID.VEHICLES.FIRETRUCK,
+	UID.VEHICLES.POLICECAR,
+	UID.VEHICLES.SCHOOLBUS,
+	UID.VEHICLES.TOWTRUCK
 ]
 var selected_vehicle_index: int = 0
 
@@ -50,7 +50,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		AudioManager.playUIClick()
 	
 	if Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
-		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
+		SceneSwitcher.switch_scene(UID.CORE.MAINMENU)
 
 func _process(delta: float) -> void:
 	if time_until_next > 0.0:
@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 	Utility.selected_vehicle = vehicle
 	
 	if player1_ready and player2_ready:
-		SceneSwitcher.switch_scene("uid://y2yrudm57l61") # Load into the City
+		SceneSwitcher.switch_scene(UID.CORE.CITY) # Load into the City
 		
 	if time_until_next <= 0.0:
 		if (Utility.player1_selected == "Driver" and Input.is_action_just_pressed("right_p1") and selected_vehicle_index != available_vehicles.size()-1) or \

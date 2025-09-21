@@ -13,7 +13,7 @@ func _ready() -> void:
 	if connected_pads.has(1):
 		_add_controller_input("p2", 1)
 	
-	SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
+	SceneSwitcher.switch_scene(UID.CORE.MAINMENU)
 
 
 func _add_controller_input(player_prefix: String, device_id: int) -> void:

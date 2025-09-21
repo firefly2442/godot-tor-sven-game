@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 		(Utility.player1_selected == "Operator" and Utility.player2_selected == "Driver") or \
 		(Utility.player1_selected == "Driver" and Utility.player2_selected == "Operator") \
 	 ):
-		SceneSwitcher.switch_scene("uid://b5t5uspulig2g") # Load into the Garage
+		SceneSwitcher.switch_scene(UID.CORE.GARAGE)
 	
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_p1"):
@@ -107,4 +107,4 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("escape_p1") or Input.is_action_just_pressed("escape_p2"):
 		AudioManager.playUIClick()
-		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
+		SceneSwitcher.switch_scene(UID.CORE.MAINMENU)

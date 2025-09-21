@@ -50,4 +50,4 @@ func _on_item_selected(index: int) -> void:
 		AudioManager.playBackgroundMusic()
 		MissionGenerator.clearMissions()
 		Utility.in_city = false
-		SceneSwitcher.switch_scene("uid://bky45hik6v0r0") # Main Menu
+		SceneSwitcher.switch_scene(UID.CORE.MAINMENU)
