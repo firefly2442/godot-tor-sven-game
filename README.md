@@ -22,7 +22,7 @@ from "Grounded" to "Floating".
 * Built for 1920x1080 resolution, changes may break the game
 * Keyboard and controller supported
 * Use `Debug -> Visible Collision Shapes` for debugging collisions and physics
-* Built and tested against Godot `4.5`
+* Built and tested against Godot `4.5.1`
 * [Godot CI](https://github.com/abarichello/godot-ci) used for Github automated builds
 
 ## References and Links
