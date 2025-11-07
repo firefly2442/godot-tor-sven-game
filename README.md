@@ -25,6 +25,14 @@ from "Grounded" to "Floating".
 * Built and tested against Godot `4.5.1`
 * [Godot CI](https://github.com/abarichello/godot-ci) used for Github automated builds
 
+## License
+
+* Sourcecode - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
+* Art/Images - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
+  * [Kenney.nl](https://kenney.nl)
+* Sound/Audio/Music - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
+  * [Freesound.org](https://freesound.org)
+
 ## References and Links
 
 * [Godot Tutorials](https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg)
