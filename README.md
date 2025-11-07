@@ -4,6 +4,11 @@
 
 A [Godot](https://godotengine.org) game for Tor and Sven!
 
+## Controls
+
+This is a cooperative game intended for two players.
+Both the keyboard and XBox controller are supported as inputs.
+
 ## Developer Notes
 
 * Use signals to promote information up a tree
@@ -28,7 +33,7 @@ from "Grounded" to "Floating".
 ## License
 
 * Sourcecode - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
-* Art/Images - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
+* Art/Images/Models - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
   * [Kenney.nl](https://kenney.nl)
 * Sound/Audio/Music - [Creative Commons 0](https://creativecommons.org/public-domain/cc0/)
   * [Freesound.org](https://freesound.org)
