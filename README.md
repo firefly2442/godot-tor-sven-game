@@ -2,7 +2,7 @@
 
 ## About
 
-A Godot game for Tor and Sven!
+A [Godot](https://godotengine.org) game for Tor and Sven!
 
 ## Developer Notes
 
