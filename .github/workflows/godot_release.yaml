@@ -48,7 +48,7 @@ jobs:
       run: |
         ./godot-bin/Godot* --headless --export-release "Windows Desktop" build/tor_sven_game.exe
 
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: builds
         path: build/
