@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=7 format=3 uid="uid://blmojbbdjr07"]
+[gd_resource type="Resource" script_class="vehicle_resource" format=3 uid="uid://blmojbbdjr07"]
 
 [ext_resource type="AudioStream" uid="uid://bfm6lca8ickg5" path="res://sounds/vehicles/police_siren.ogg" id="1_kcbkc"]
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_nirs3"]

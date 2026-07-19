@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=7 format=3 uid="uid://dhgr0cdhk6bwe"]
+[gd_resource type="Resource" script_class="vehicle_resource" format=3 uid="uid://dhgr0cdhk6bwe"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_me21k"]
 [ext_resource type="AudioStream" uid="uid://bfm6lca8ickg5" path="res://sounds/vehicles/police_siren.ogg" id="1_nhx3g"]
@@ -10,7 +10,6 @@
 [resource]
 script = ExtResource("1_me21k")
 speed = 200.0
-vehicletype = 0
 texture = ExtResource("2_i5tvn")
 vehicle_engine_sound = ExtResource("3_mx434")
 vehicle_horn_sound = ExtResource("3_5brgv")

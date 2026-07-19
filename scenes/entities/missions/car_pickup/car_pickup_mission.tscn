@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfxrg30dyb8cp"]
+[gd_scene format=3 uid="uid://bfxrg30dyb8cp"]
 
 [ext_resource type="Script" uid="uid://dqj66emk7uol8" path="res://scripts/entities/missions/car_pickup_mission.gd" id="1_bs47p"]
 [ext_resource type="Texture2D" uid="uid://dsugywyp55a7i" path="res://images/vehicles/sedan_blue.png" id="2_b07bf"]
@@ -40,13 +40,13 @@ color_ramp = SubResource("GradientTexture1D_ay3je")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjbn2"]
 size = Vector2(33, 20)
 
-[node name="CarPickup" type="Node2D"]
+[node name="CarPickup" type="Node2D" unique_id=1054834645]
 script = ExtResource("1_bs47p")
 
-[node name="CarSprite2D" type="Sprite2D" parent="."]
+[node name="CarSprite2D" type="Sprite2D" parent="." unique_id=1589872742]
 texture = ExtResource("2_b07bf")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1027082344]
 texture_filter = 4
 material = SubResource("CanvasItemMaterial_cjbn2")
 texture = ExtResource("3_bee8p")
@@ -55,11 +55,11 @@ preprocess = 2.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ay3je")
 
-[node name="CarPickupArea2D" type="Area2D" parent="."]
+[node name="CarPickupArea2D" type="Area2D" parent="." unique_id=1777935278]
 collision_layer = 8
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CarPickupArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarPickupArea2D" unique_id=2001104572]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_cjbn2")
 

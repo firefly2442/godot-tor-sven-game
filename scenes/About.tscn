@@ -1,29 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bksrdmi7ug4ve"]
+[gd_scene format=3 uid="uid://bksrdmi7ug4ve"]
 
 [ext_resource type="Script" uid="uid://bedblcg7hbq6l" path="res://scripts/About.gd" id="1_t6kcj"]
 [ext_resource type="Texture2D" uid="uid://docckilkns32j" path="res://images/ui/godot.svg" id="2_gpaav"]
 
-[node name="About" type="Node2D"]
+[node name="About" type="Node2D" unique_id=1318582732]
 script = ExtResource("1_t6kcj")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1449394198]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=351007832]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=592555853]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="SpacerLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="SpacerLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=1641477172]
 layout_mode = 2
 text = "
 
@@ -46,28 +46,28 @@ text = "
 
 "
 
-[node name="CreditsLabel2" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="CreditsLabel2" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=563208017]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="PoweredByLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="PoweredByLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=1388132916]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Powered by the Godot Game Engine"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1436281715]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1174180861]
 layout_mode = 2
 texture = ExtResource("2_gpaav")
 stretch_mode = 4
 
-[node name="CreditsLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="CreditsLabel" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=1050848692]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Programming:

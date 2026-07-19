@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://x45urlgxnu8f"]
+[gd_scene format=3 uid="uid://x45urlgxnu8f"]
 
 [ext_resource type="Script" uid="uid://6r4f3e0boftd" path="res://scripts/PauseMenu.gd" id="1_jvnd5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvnd5"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" unique_id=456391335]
 script = ExtResource("1_jvnd5")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1195515945]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -22,27 +22,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jvnd5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=211629167]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="PausedLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="PausedLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1950752728]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="MenuItems" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MenuItems" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=613132082]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="BackLabel" type="Label" parent="PanelContainer/VBoxContainer/MenuItems"]
+[node name="BackLabel" type="Label" parent="PanelContainer/VBoxContainer/MenuItems" unique_id=879518939]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Back to Game"
 horizontal_alignment = 1
 
-[node name="MainMenuLabel" type="Label" parent="PanelContainer/VBoxContainer/MenuItems"]
+[node name="MainMenuLabel" type="Label" parent="PanelContainer/VBoxContainer/MenuItems" unique_id=176243134]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Return to Main Menu"

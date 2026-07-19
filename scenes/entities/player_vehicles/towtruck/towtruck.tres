@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="vehicle_resource" load_steps=7 format=3 uid="uid://beu2y01pvh78r"]
+[gd_resource type="Resource" script_class="vehicle_resource" format=3 uid="uid://beu2y01pvh78r"]
 
 [ext_resource type="Script" uid="uid://cfalb38rhymnv" path="res://scenes/entities/player_vehicles/vehicle_resource.gd" id="1_3q68h"]
 [ext_resource type="AudioStream" uid="uid://b2fy60esl6g2m" path="res://sounds/vehicles/hot_bath_accent.ogg" id="1_tg3c1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dq6ja7ouhyi51"]
+[gd_scene format=3 uid="uid://dq6ja7ouhyi51"]
 
 [ext_resource type="Script" uid="uid://bu46e4krp17wl" path="res://scripts/Controls.gd" id="1_5dcjj"]
 [ext_resource type="Texture2D" uid="uid://cp0vthd2d8w1h" path="res://images/ui/keyboard_w.png" id="2_lqn12"]
@@ -22,532 +22,532 @@
 [ext_resource type="Texture2D" uid="uid://bebse2qe5jm0f" path="res://images/ui/xbox_button_color_b.png" id="14_d0dk2"]
 [ext_resource type="Texture2D" uid="uid://c0p8osvp2n2cp" path="res://images/ui/xbox_button_start_icon.png" id="15_jhxpp"]
 
-[node name="Controls" type="Node2D"]
+[node name="Controls" type="Node2D" unique_id=1317926434]
 script = ExtResource("1_5dcjj")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=64605651]
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1377509513]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Player1VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Player1VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=909779644]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="Player1Label" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+[node name="Player1Label" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer" unique_id=1406473056]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Player 1"
 horizontal_alignment = 1
 
-[node name="KeyboardLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+[node name="KeyboardLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer" unique_id=128257029]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Keyboard:"
 
-[node name="KeyboardHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+[node name="KeyboardHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer" unique_id=1056945397]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer" unique_id=1966321869]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
 
-[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1490495624]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1508536920]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer" unique_id=686215872]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Up"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer" unique_id=77238841]
 layout_mode = 2
 texture = ExtResource("2_lqn12")
 
-[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1187294289]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=235235068]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2" unique_id=1135080932]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Left"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2" unique_id=527497126]
 layout_mode = 2
 texture = ExtResource("3_po4s7")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1668390121]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3" unique_id=276563059]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Down"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3" unique_id=1756902382]
 layout_mode = 2
 texture = ExtResource("4_lspxa")
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1579783436]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4" unique_id=712239821]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Right"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4" unique_id=1726626736]
 layout_mode = 2
 texture = ExtResource("5_w7yf0")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer" unique_id=1548415459]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer" unique_id=1661826202]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer" unique_id=1271838852]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Action"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer" unique_id=651017440]
 layout_mode = 2
 texture = ExtResource("6_w7yf0")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer" unique_id=1390121307]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1803759114]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1455703085]
 layout_mode = 2
 texture = ExtResource("7_gulgq")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer" unique_id=147945113]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1387173432]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Escape"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=17424957]
 layout_mode = 2
 texture = ExtResource("8_1lfq6")
 
-[node name="ControllerLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+[node name="ControllerLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer" unique_id=1857353042]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Controller:"
 
-[node name="Player1ControllerHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer"]
+[node name="Player1ControllerHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer" unique_id=1132038649]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer" unique_id=249154707]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
 
-[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer" unique_id=1602425642]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer" unique_id=547125375]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer"]
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer" unique_id=304222879]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Up"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer" unique_id=29191982]
 layout_mode = 2
 texture = ExtResource("9_hqg07")
 
-[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer" unique_id=817344962]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer" unique_id=1953500506]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer2" unique_id=311365330]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Left"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer2" unique_id=1929884708]
 layout_mode = 2
 texture = ExtResource("10_bmksv")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer" unique_id=1010750362]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer3" unique_id=360784728]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Down"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer3" unique_id=1743958177]
 layout_mode = 2
 texture = ExtResource("11_5wpvi")
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer" unique_id=1459593283]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer4" unique_id=236615225]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Right"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/GridContainer/VBoxContainer4" unique_id=1437226882]
 layout_mode = 2
 texture = ExtResource("12_rn4hu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer" unique_id=1956643265]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer" unique_id=1934881470]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer" unique_id=2119172273]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Action"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer" unique_id=2109011270]
 layout_mode = 2
 texture = ExtResource("13_rn4hu")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer" unique_id=606792191]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2101191443]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1213510284]
 layout_mode = 2
 texture = ExtResource("14_d0dk2")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer" unique_id=1803095996]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1754893336]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Escape"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player1VBoxContainer/Player1ControllerHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=843672199]
 layout_mode = 2
 texture = ExtResource("15_jhxpp")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer" unique_id=425430753]
 layout_mode = 2
 
-[node name="Player2VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Player2VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=265164782]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="Player2Label" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+[node name="Player2Label" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer" unique_id=640779138]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Player 2"
 horizontal_alignment = 1
 
-[node name="KeyboardLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+[node name="KeyboardLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer" unique_id=815319830]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Keyboard:"
 
-[node name="KeyboardHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+[node name="KeyboardHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer" unique_id=79696950]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer" unique_id=1901150292]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
 
-[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=2077630431]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1551084905]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer" unique_id=2014269046]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Up"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer" unique_id=864705251]
 layout_mode = 2
 texture = ExtResource("9_6tcr1")
 
-[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1484335849]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=1509104687]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2" unique_id=1050753534]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Left"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer2" unique_id=1035179240]
 layout_mode = 2
 texture = ExtResource("10_1aq3p")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=49431456]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3" unique_id=1563313027]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Down"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer3" unique_id=1455463059]
 layout_mode = 2
 texture = ExtResource("11_1f26w")
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer" unique_id=134729963]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4" unique_id=336906889]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Right"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/GridContainer/VBoxContainer4" unique_id=1300010718]
 layout_mode = 2
 texture = ExtResource("12_tj2n8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer" unique_id=1160981981]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer" unique_id=1966357607]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer" unique_id=2107787992]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Action"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer" unique_id=1697931017]
 layout_mode = 2
 texture = ExtResource("10_1lfq6")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer" unique_id=1966730552]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=832081253]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1654031399]
 layout_mode = 2
 texture = ExtResource("9_gulgq")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer" unique_id=1771758320]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=712653998]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Escape"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/KeyboardHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1917685359]
 layout_mode = 2
 texture = ExtResource("8_1lfq6")
 
-[node name="ControllerLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+[node name="ControllerLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer" unique_id=1183390630]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Controller:"
 
-[node name="Player2ControllerHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer"]
+[node name="Player2ControllerHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer" unique_id=1751067626]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer" unique_id=139835983]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
 
-[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+[node name="Empty" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer" unique_id=1152255914]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer" unique_id=436922945]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer"]
+[node name="UpLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer" unique_id=1073626886]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Up"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer" unique_id=1426283311]
 layout_mode = 2
 texture = ExtResource("9_hqg07")
 
-[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+[node name="Empty2" type="Control" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer" unique_id=1563449174]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer" unique_id=1150352296]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="LeftLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer2" unique_id=1878221801]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Left"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer2" unique_id=1388679568]
 layout_mode = 2
 texture = ExtResource("10_bmksv")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer" unique_id=1178014941]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="DownLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer3" unique_id=697472780]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Down"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer3" unique_id=1437888202]
 layout_mode = 2
 texture = ExtResource("11_5wpvi")
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer" unique_id=776026358]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="RightLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer4" unique_id=996638426]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Right"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/GridContainer/VBoxContainer4" unique_id=1750173038]
 layout_mode = 2
 texture = ExtResource("12_rn4hu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer" unique_id=1122703009]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer" unique_id=1932659090]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer" unique_id=116672926]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Action"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer" unique_id=1613525932]
 layout_mode = 2
 texture = ExtResource("13_rn4hu")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer" unique_id=1341514835]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BackLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=611840099]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1779636280]
 layout_mode = 2
 texture = ExtResource("14_d0dk2")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer" unique_id=1767673185]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="EscapeLabel" type="Label" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=944916698]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Escape"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player2VBoxContainer/Player2ControllerHBoxContainer/HBoxContainer/VBoxContainer3" unique_id=144613410]
 layout_mode = 2
 texture = ExtResource("15_jhxpp")

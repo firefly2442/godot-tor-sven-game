@@ -1,85 +1,85 @@
-[gd_scene load_steps=2 format=3 uid="uid://di0q3ok3ocsaj"]
+[gd_scene format=3 uid="uid://di0q3ok3ocsaj"]
 
 [ext_resource type="Script" uid="uid://t1tvgy234dga" path="res://scripts/NewGameSetup.gd" id="1_6sv6c"]
 
-[node name="NewGameSetup" type="Node2D"]
+[node name="NewGameSetup" type="Node2D" unique_id=243384149]
 script = ExtResource("1_6sv6c")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1315953334]
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=439544803]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1172622846]
 layout_mode = 2
 
-[node name="DriverVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="DriverVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1400915762]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DriverLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/DriverVBoxContainer"]
+[node name="DriverLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/DriverVBoxContainer" unique_id=978927712]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Driver"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=713556519]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ControllerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="ControllerLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1645816430]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Select Role"
 horizontal_alignment = 1
 
-[node name="Player1Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Player1Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1701894919]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container" unique_id=2144509375]
 layout_mode = 2
 alignment = 1
 
-[node name="Player1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container/HBoxContainer"]
+[node name="Player1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container/HBoxContainer" unique_id=1210005676]
 unique_name_in_owner = true
 layout_mode = 2
 stretch_mode = 4
 
-[node name="Player1Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container"]
+[node name="Player1Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player1Container" unique_id=918468053]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
-[node name="Player2Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Player2Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=543802593]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container" unique_id=1810728341]
 layout_mode = 2
 alignment = 1
 
-[node name="Player2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container/HBoxContainer"]
+[node name="Player2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container/HBoxContainer" unique_id=1923065770]
 unique_name_in_owner = true
 layout_mode = 2
 stretch_mode = 4
 
-[node name="Player2Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container"]
+[node name="Player2Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Player2Container" unique_id=1600264113]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
-[node name="OperatorVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="OperatorVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1520385372]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="OperatorLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/OperatorVBoxContainer"]
+[node name="OperatorLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/OperatorVBoxContainer" unique_id=2074879634]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Operator"

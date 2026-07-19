@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhgq6yxn5pglg"]
+[gd_scene format=3 uid="uid://bhgq6yxn5pglg"]
 
 [ext_resource type="Script" uid="uid://0ks8seft4f6h" path="res://scripts/singletons/MissionGenerator.gd" id="1_h00ha"]
 
-[node name="MissionGenerator" type="Node2D"]
+[node name="MissionGenerator" type="Node2D" unique_id=339072994]
 script = ExtResource("1_h00ha")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=114558615]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="Missions" type="Node2D" parent="."]
+[node name="Missions" type="Node2D" parent="." unique_id=240422682]
 unique_name_in_owner = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

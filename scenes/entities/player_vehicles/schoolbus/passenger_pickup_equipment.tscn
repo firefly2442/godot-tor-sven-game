@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dryuqcihy6mp1"]
+[gd_scene format=3 uid="uid://dryuqcihy6mp1"]
 
 [ext_resource type="Script" uid="uid://chtpc0ne03014" path="res://scripts/entities/PassengerPickupEquipment.gd" id="1_3wsie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wsie"]
 
-[node name="PassengerPickupEquipment" type="Node2D"]
+[node name="PassengerPickupEquipment" type="Node2D" unique_id=1208648442]
 script = ExtResource("1_3wsie")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=618308236]
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1967347384]
 shape = SubResource("RectangleShape2D_3wsie")

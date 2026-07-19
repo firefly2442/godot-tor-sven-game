@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhff7y7sbn8ga"]
+[gd_scene format=3 uid="uid://bhff7y7sbn8ga"]
 
 [ext_resource type="Texture2D" uid="uid://dx8yn5pihagu0" path="res://scenes/entities/missions/fire/fire_02.png" id="1_oybr4"]
 [ext_resource type="Script" uid="uid://cvfp4fjtwdica" path="res://scripts/entities/missions/fire_mission.gd" id="1_shvia"]
@@ -59,10 +59,10 @@ color_ramp = SubResource("GradientTexture1D_shvia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6sdm"]
 
-[node name="FireMission" type="Node2D"]
+[node name="FireMission" type="Node2D" unique_id=1010145755]
 script = ExtResource("1_shvia")
 
-[node name="FireGPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="FireGPUParticles2D" type="GPUParticles2D" parent="." unique_id=413519171]
 unique_name_in_owner = true
 texture_filter = 4
 material = SubResource("CanvasItemMaterial_u6sdm")
@@ -71,7 +71,7 @@ texture = ExtResource("1_oybr4")
 preprocess = 1.0
 process_material = SubResource("ParticleProcessMaterial_pmjo1")
 
-[node name="SmokeGPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="SmokeGPUParticles2D" type="GPUParticles2D" parent="." unique_id=2119305078]
 unique_name_in_owner = true
 position = Vector2(0, -55)
 amount = 32
@@ -80,20 +80,20 @@ lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_xw388")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=975083314]
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=89570178]
 shape = SubResource("RectangleShape2D_u6sdm")
 
-[node name="FireOutTimer" type="Timer" parent="."]
+[node name="FireOutTimer" type="Timer" parent="." unique_id=1939754789]
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 
-[node name="SprayingWaterTimer" type="Timer" parent="."]
+[node name="SprayingWaterTimer" type="Timer" parent="." unique_id=1047558599]
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true

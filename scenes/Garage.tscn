@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5t5uspulig2g"]
+[gd_scene format=3 uid="uid://b5t5uspulig2g"]
 
 [ext_resource type="Script" uid="uid://miwv1qfonbif" path="res://scripts/Garage.gd" id="1_75lht"]
 [ext_resource type="Texture2D" uid="uid://mtn5ek4rto25" path="res://images/ui/keyboard_e.png" id="2_uwphw"]
@@ -8,103 +8,103 @@
 [ext_resource type="Texture2D" uid="uid://ckjrg7loeuikr" path="res://images/ui/arrowLeft.png" id="6_rd182"]
 [ext_resource type="Texture2D" uid="uid://dbd7jikssh7qk" path="res://images/ui/arrowRight.png" id="7_6t0ip"]
 
-[node name="Garage" type="Node2D"]
+[node name="Garage" type="Node2D" unique_id=1286732634]
 script = ExtResource("1_75lht")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1015872257]
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=423918636]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1373669240]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=258639775]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Player1ReadyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="Player1ReadyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1669254768]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Player 1 Ready"
 horizontal_alignment = 1
 
-[node name="Player1ReadyIconTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="Player1ReadyIconTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1260896498]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_uwphw")
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1168338738]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1139073554]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Select Vehicle"
 horizontal_alignment = 1
 
-[node name="VehicleTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="VehicleTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=947908728]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_vgbj5")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=371734174]
 layout_mode = 2
 
-[node name="LeftTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="LeftTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1371092185]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("5_3uxhb")
 stretch_mode = 5
 
-[node name="LeftTextureImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="LeftTextureImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1605764512]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("6_rd182")
 
-[node name="RightTextureImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="RightTextureImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1312366665]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("7_6t0ip")
 
-[node name="RightTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="RightTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2113214813]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("6_imsuq")
 stretch_mode = 5
 
-[node name="VehicleLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="VehicleLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2134990214]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Ambulance"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1833206929]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Player2ReadyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Player2ReadyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1857278200]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Player 2 Ready"
 horizontal_alignment = 1
 
-[node name="Player2ReadyIconTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Player2ReadyIconTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1468524513]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_uwphw")

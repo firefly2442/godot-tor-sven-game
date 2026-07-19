@@ -1,43 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://b35ghe84mnrs"]
+[gd_scene format=3 uid="uid://b35ghe84mnrs"]
 
 [ext_resource type="Script" uid="uid://bilx0qc0txe4f" path="res://scripts/Options.gd" id="1_4i5wa"]
 
-[node name="Options" type="Node2D"]
+[node name="Options" type="Node2D" unique_id=637920277]
 script = ExtResource("1_4i5wa")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=714049446]
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=953332284]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1375867495]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
-[node name="Fullscreen" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+[node name="Fullscreen" type="CheckBox" parent="MarginContainer/VBoxContainer" unique_id=893844867]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Fullscreen"
 
-[node name="BackgroundMusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="BackgroundMusicLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=400837012]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Background Music Volume:"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=843074398]
 layout_mode = 2
 
-[node name="OffLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="OffLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=660493285]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Off"
 
-[node name="BackgroundMusicHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="BackgroundMusicHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1699404497]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -45,25 +45,25 @@ min_value = -50.0
 max_value = 0.0
 step = 5.0
 
-[node name="HighLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="HighLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1804350592]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "High"
 
-[node name="SoundEffectsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="SoundEffectsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=484581436]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Sound Effects Volume:"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1916802804]
 layout_mode = 2
 
-[node name="OffLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="OffLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=44899275]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Off"
 
-[node name="SoundEffectsHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="SoundEffectsHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2129399526]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -71,12 +71,12 @@ min_value = -50.0
 max_value = 0.0
 step = 5.0
 
-[node name="HighLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="HighLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1270827734]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "High"
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1264586747]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
